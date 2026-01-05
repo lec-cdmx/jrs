@@ -252,6 +252,13 @@ h1{
   color: var(--muted2);
   font-size: 13px;
 }
+/* --- Header logo --- */
+.logo-header{
+  width: 60px;   /* ajusta aquí el tamaño */
+  height: 60px;
+  object-fit: contain;
+}
+
 
 /* ---------- Buttons (modern, zip-like) ---------- */
 .actions{
