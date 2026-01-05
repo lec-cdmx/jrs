@@ -9,10 +9,19 @@
 <body>
 <header>
   <div class="wrap">
-    <div class="brand">
-      <h1>Junior Research Seminar</h1>
-      <div class="tag">Preparatoria</div>
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div class="brand-text">
+          <p class="title">Junior Research Seminar</p>
+          <div class="sub">Preparatoria</div>
+        </div>
+      </div>
+      <div class="badges">
+        <span class="badge"><span class="dot"></span>Guías</span>
+      </div>
     </div>
+
     <nav>
       <a href="index.html">Home</a>
       <a href="calendario.html">Calendario</a>
@@ -25,31 +34,50 @@
 </header>
 
 <main class="wrap">
-  <h2>Preparatoria</h2>
-  <p>Material para preparar una buena sesión, ya sea como ponente o discussant.</p>
+  <h1 class="page">Preparatoria</h1>
+  <p class="small">Lo mínimo para que una sesión salga bien y no se vaya en “comentarios generales”.</p>
 
-  <div class="card">
-    <p><b>Checklist para ponentes</b></p>
-    <ul>
-      <li>Resumen de 1 página (motivación, contribución, datos, estrategia empírica).</li>
-      <li>Versión PDF del paper (o draft) con numeración de páginas.</li>
-      <li>Slides opcionales (máximo 12–15).</li>
-    </ul>
+  <div class="grid">
+    <section class="card">
+      <h3>Checklist para ponentes</h3>
+      <ul>
+        <li>Resumen de 1 página: motivación, aporte, datos, identificación.</li>
+        <li>Draft PDF con numeración de páginas y figuras legibles.</li>
+        <li>Slides opcionales (12–15 máx) para no competir con el paper.</li>
+        <li>3 preguntas concretas donde quieras feedback.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h3>Checklist para discussants</h3>
+      <ul>
+        <li>3 fortalezas (con evidencia) y 3 riesgos (con ejemplos).</li>
+        <li>Revisión de identificación: supuestos, amenazas, falsificaciones.</li>
+        <li>Medición: definiciones, sesgos, sensibilidad.</li>
+        <li>3 acciones: “cambia X, prueba Y, reporta Z”.</li>
+      </ul>
+    </section>
   </div>
 
-  <div class="card">
-    <p><b>Checklist para discussants</b></p>
-    <ul>
-      <li>3 fortalezas, 3 debilidades, 3 recomendaciones accionables.</li>
-      <li>Comentarios sobre identificación/validez interna y medición.</li>
-      <li>Propuesta concreta de “siguiente paso” del paper.</li>
-    </ul>
-  </div>
+  <section class="card">
+    <h3>Plantilla de feedback (rápida)</h3>
+    <div class="codebox">
+      1) Contribución (1–2 frases). 2) Identificación: amenaza principal y cómo la mitigaría.
+      3) Medición: qué variable es la más frágil y por qué. 4) Resultados: qué gráfico/tabla falta.
+      5) Próximo paso: un experimento/robustez concreta.
+    </div>
+  </section>
 </main>
 
 <footer>
-  <div class="wrap">© <span id="year"></span> Junior Research Seminar</div>
+  <div class="wrap">
+    <div>© <span id="year"></span> Junior Research Seminar</div>
+    <div class="small">Editable y ampliable según madure el seminario.</div>
+  </div>
 </footer>
-<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
