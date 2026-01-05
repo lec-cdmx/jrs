@@ -4,6 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Calendario · JRS</title>
+
+  <link rel="icon" href="assets/favicon.png" type="image/png" />
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
@@ -11,7 +13,7 @@
   <div class="wrap">
     <div class="topbar">
       <div class="brand">
-        <div class="mark" aria-hidden="true"></div>
+        <img src="assets/logo-jrs.svg" alt="Logo JRS" style="width:40px;height:40px;" onerror="this.onerror=null;this.src='assets/logo-jrs.png';" />
         <div class="brandtext">
           <p class="title">Junior Research Seminar</p>
           <div class="sub">Calendario</div>
@@ -34,8 +36,10 @@
 </header>
 
 <main class="wrap">
-  <h1>Calendario</h1>
-  <p class="lead">Sesiones activas. Para sesiones pasadas, ver <a href="archivo.html">Archivo histórico</a>.</p>
+  <section class="hero" style="padding:18px 18px;">
+    <h1 style="margin-top:0;">Calendario</h1>
+    <p class="lead">Sesiones vigentes. Para ediciones anteriores, ver <a href="archivo.html">Archivo histórico</a>.</p>
+  </section>
 
   <div class="table-wrap">
     <table>
@@ -50,7 +54,7 @@
       </thead>
       <tbody>
         <tr>
-          <td>(2026-01-XX)</td>
+          <td>(YYYY-MM-DD)</td>
           <td>(Título / referencia corta)</td>
           <td>(Nombre)</td>
           <td>(Nombre)</td>
@@ -60,17 +64,23 @@
     </table>
   </div>
 
-  <section class="card">
-    <h2>Proponer una sesión</h2>
-    <p>Revisa <a href="normas.html">Normas</a> y manda tu propuesta en <a href="contacto.html">Contacto</a>.</p>
-  </section>
+  <div class="grid">
+    <section class="card">
+      <h2>Proponer una sesión</h2>
+      <p>Revisa <a href="normas.html">Normas</a> y usa la plantilla mínima de <a href="contacto.html">Contacto</a>.</p>
+    </section>
+    <section class="card">
+      <h2>Materiales</h2>
+      <p>Ideal: draft PDF 48–72 horas antes. Si hay versión nueva, avisa qué cambió.</p>
+    </section>
+  </div>
 </main>
 
 <footer>
   <div class="wave" aria-hidden="true"></div>
   <div class="footer-inner">
     <div>© <span id="year"></span> JRS</div>
-    <div class="small">Actualiza esta tabla editando el HTML.</div>
+    <div class="small">Edita esta tabla directamente en el HTML.</div>
   </div>
 </footer>
 
