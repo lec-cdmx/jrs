@@ -460,3 +460,10 @@ footer{
   flex: 0 0 auto;
   object-fit: contain;
 }
+
+.tec-logo{
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.95;
+}
