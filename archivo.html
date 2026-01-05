@@ -9,10 +9,19 @@
 <body>
 <header>
   <div class="wrap">
-    <div class="brand">
-      <h1>Junior Research Seminar</h1>
-      <div class="tag">Archivo histórico</div>
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div class="brand-text">
+          <p class="title">Junior Research Seminar</p>
+          <div class="sub">Archivo histórico</div>
+        </div>
+      </div>
+      <div class="badges">
+        <span class="badge">Histórico</span>
+      </div>
     </div>
+
     <nav>
       <a href="index.html">Home</a>
       <a href="calendario.html">Calendario</a>
@@ -25,35 +34,50 @@
 </header>
 
 <main class="wrap">
-  <h2>Archivo histórico</h2>
+  <h1 class="page">Archivo histórico</h1>
+  <p class="small">Sesiones pasadas organizadas por edición/semestre. Sugerencia: mantener links a PDFs y slides.</p>
 
-  <div class="card">
-    <p><b>Edición 2025 (ejemplo)</b></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Fecha</th>
-          <th>Tema / Paper</th>
-          <th>Ponente</th>
-          <th>Material</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>(2025-09-XX)</td>
-          <td>(Título)</td>
-          <td>(Nombre)</td>
-          <td>(link)</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
+  <section class="card">
+    <h3>Edición 2025 (ejemplo)</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Tema / Paper</th>
+            <th>Ponente</th>
+            <th>Material</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>(2025-09-XX)</td>
+            <td>(Título)</td>
+            <td>(Nombre)</td>
+            <td>(link)</td>
+          </tr>
+          <tr>
+            <td>(2025-10-XX)</td>
+            <td>(Título)</td>
+            <td>(Nombre)</td>
+            <td>(link)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small">Si prefieres, puedes hacer una sección por semestre: 2025-1, 2025-2, etc.</p>
+  </section>
 </main>
 
 <footer>
-  <div class="wrap">© <span id="year"></span> Junior Research Seminar</div>
+  <div class="wrap">
+    <div>© <span id="year"></span> Junior Research Seminar</div>
+    <div class="small">Mantén el archivo ordenado para que sea útil.</div>
+  </div>
 </footer>
-<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
