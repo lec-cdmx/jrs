@@ -325,6 +325,49 @@ h1{
 }
 .btn-ghost:hover{ text-decoration: none; background: white; }
 
+/* --- Home multi-buttons --- */
+.actions-multi{
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.btn-solid{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  border-radius: 16px;
+  font-weight: 900;
+  font-size: 14.5px;
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,.18);
+  box-shadow: 0 10px 22px rgba(0,0,0,.12);
+  transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+}
+
+.btn-solid:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(0,0,0,.18);
+  filter: brightness(1.03);
+  text-decoration: none;
+}
+
+/* Colores solicitados */
+.btn-solid.c1{ background: #005bc1; } /* Calendario */
+.btn-solid.c2{ background: #007cce; } /* Archivo */
+.btn-solid.c3{ background: #0099c8; } /* Normas */
+.btn-solid.c4{ background: #00b5b7; } /* JRS PrepaTec */
+
+/* Mobile */
+@media (max-width: 720px){
+  .btn-solid{
+    flex: 1 1 100%;
+  }
+}
+
 /* ---------- Cards / Grid ---------- */
 .grid{
   display:grid;
