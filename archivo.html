@@ -122,7 +122,7 @@
   </section>
 
   <!-- =======================================================
-       EDICIÓN 2025 · AGOSTO–DICIEMBRE (PENDIENTE)
+       EDICIÓN 2025 · AGOSTO–DICIEMBRE (orden inverso)
        ======================================================= -->
   <section class="card" style="margin-top:14px;">
     <button class="collapse-toggle" type="button" aria-expanded="false" aria-controls="ed-2025-ago-dic">
@@ -137,7 +137,164 @@
     </button>
 
     <div id="ed-2025-ago-dic" class="collapse-body" hidden>
-      <p class="lead">[Pendiente de captura]</p>
+
+      <!-- Buscador / filtros -->
+      <div class="filters" aria-label="Filtros de búsqueda">
+        <div class="field" style="flex: 2 1 280px;">
+          <label for="q2">Buscar (ponente o tema)</label>
+          <input id="q2" type="text" placeholder="Ej. UNAM, pobreza, Utopías, BIS..." autocomplete="off" />
+        </div>
+
+        <div class="field">
+          <label for="fromDate2">Desde</label>
+          <input id="fromDate2" type="date" />
+        </div>
+
+        <div class="field">
+          <label for="toDate2">Hasta</label>
+          <input id="toDate2" type="date" />
+        </div>
+
+        <div class="field" style="min-width:140px;">
+          <button class="btn" id="clearBtn2" type="button">Limpiar</button>
+          <div class="smallhint muted" id="countHint2"></div>
+        </div>
+      </div>
+
+      <div class="table-wrap" style="margin-top:12px;">
+        <table id="archivoTable2">
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Ponente</th>
+              <th>Tema</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr>
+              <td>26-nov-2025</td>
+              <td>Dr. David Maldonado Tafoya, UNAM</td>
+              <td>Crecimiento y recaudación tributaria en México: implicaciones de la elasticidad del ISR e IVA</td>
+            </tr>
+
+            <tr>
+              <td>19-nov-2025</td>
+              <td>Vianey Gutiérrez Hernández, LEC-LTP CCM<br>Dr. Alfonso Rivera Illingworth, ITESM</td>
+              <td>Uso de tecnologías digitales por parte del crimen organizado en México</td>
+            </tr>
+            <tr>
+              <td>19-nov-2025</td>
+              <td>Karlo André Romero Hernández, LEC CCM</td>
+              <td>Tecno-feudalismo: Corporativismos tecnológicos coloniales, Parte 2</td>
+            </tr>
+
+            <tr>
+              <td>12-nov-2025</td>
+              <td>Dr. Pedro Liedo Orozco, ITESM</td>
+              <td>Estudio económico de los impactos de biocombustibles</td>
+            </tr>
+            <tr>
+              <td>12-nov-2025</td>
+              <td>Miguel Ángel Ruíz Chacón, LEC-LTP CCM</td>
+              <td>Movilidad y planeación urbana: El caso del transporte público en Veracruz</td>
+            </tr>
+
+            <tr>
+              <td>05-nov-2025</td>
+              <td>Dr. Diego Alejo Vázquez Pimentel, Amnistía Internacional</td>
+              <td>La relación entre el capital social de cuidados y la movilidad económica en México</td>
+            </tr>
+
+            <tr>
+              <td>15-oct-2025</td>
+              <td>Dr. Jesús López Cabrera, ITESM</td>
+              <td>Effects of the GFC and COVID-19 on U.S. Financial Indicators: An Integrated Short-Term Econometric Approach</td>
+            </tr>
+            <tr>
+              <td>15-oct-2025</td>
+              <td>Hany Tarek Gumi Yaber Castro, LRI CCM</td>
+              <td>De Barrio a Producto: La gentrificación en San Telmo y sus resistencias</td>
+            </tr>
+
+            <tr>
+              <td>08-oct-2025</td>
+              <td>Javier Carrillo Romero, LEC-LTP CSF</td>
+              <td>La polarización del discurso parlamentario en la Cámara de Diputados (1988-2024)</td>
+            </tr>
+
+            <tr>
+              <td>01-oct-2025</td>
+              <td>Dra. Nayeli Salgado Granados, ITESM</td>
+              <td>Technical change and labor displacement. The long run effects of agricultural mechanization in Mexico</td>
+            </tr>
+            <tr>
+              <td>01-oct-2025</td>
+              <td>
+                Andoni Garritz Ayala, LEC-LRI CCM<br>
+                David Arteaga Zumaya, LEC-LRI CCM<br>
+                Daniela Arciga Portela, LEC-LRI CCM<br>
+                Andrés Felipe Gutiérrez Jaramillo, LEC-LRI CCM<br>
+                Ana Belén Aguilar Alaracón, LEC-LRI CCM<br>
+                Ricardo Alfonso Graffe García, LEC-LTP CCM
+              </td>
+              <td>Decisión de política monetaria</td>
+            </tr>
+
+            <tr>
+              <td>24-sep-2025</td>
+              <td>Mtro. Manuel Muñoz Carrillo, ITESM</td>
+              <td>El efecto de los shocks en salud de los adultos mayores sobre la pobreza multidimensional del hogar en México.</td>
+            </tr>
+            <tr>
+              <td>24-sep-2025</td>
+              <td>Alexa Jiménez Archundia, LEC CSF</td>
+              <td>Determinantes de la confianza y participacion social en México</td>
+            </tr>
+
+            <tr>
+              <td>03-sep-2025</td>
+              <td>Mtro. Diego Alegría Meza, IQOM</td>
+              <td>Colusión o coincidencia: Desafíos en la detección de prácticas absolutas en México</td>
+            </tr>
+            <tr>
+              <td>03-sep-2025</td>
+              <td>
+                Diego Prado Navarro, LEC CCM<br>
+                Adrián Monroy Calderón, LEC-LRI CCM<br>
+                Vanessa Arroyo Jeréz, LEC CEM
+              </td>
+              <td>La movilidad Social por ingreso de las mujeres Mexicanas deportadas</td>
+            </tr>
+
+            <tr>
+              <td>27-ago-2025</td>
+              <td>Mtro. Guillemo Mc Naught Sánchez, Colmex</td>
+              <td>The role of the minimum wage in reducing inequality (2018-2024): Counterfactual evaluation of wage distribution in Mexico</td>
+            </tr>
+            <tr>
+              <td>27-ago-2025</td>
+              <td>
+                Diego Ceciliano Díaz, LEC-LTP CCM<br>
+                Aldo Rafael García Hernández, LTP CCM<br>
+                Sergio Paulino Guerrero Jiménez, LTP CSF
+              </td>
+              <td>Cuido el Agua, Cuido Nuevo León</td>
+            </tr>
+
+            <tr>
+              <td>20-ago-2025</td>
+              <td>Sesión de Arranque</td>
+              <td>—</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+      <p class="small">
+        Archivo correspondiente al segundo semestre de 2025. Los materiales se agregarán conforme estén disponibles públicamente.
+      </p>
     </div>
   </section>
 
@@ -279,7 +436,7 @@
             <tr>
               <td>02-abr-2025</td>
               <td>Karlo André Romero Hernández, LEC CCM</td>
-              <td>Tecno-feudalismo: Corporativismos tecnológicos coloniales</td>
+              <td>Tecno-feudalismo: Corporativismos tecnológicos coloniales.</td>
             </tr>
 
             <tr>
@@ -289,7 +446,7 @@
                 Héctor Damián Castillo González, LEC-LTP CCM (Comentador)<br>
                 Sara Navarro Guevara, LEC CCM (Comentadora)
               </td>
-              <td>Presentación del libro: ¿Por qué es ineficiente la política monetaria en México? Una explicación kaleckiana</td>
+              <td>Presentación del libro: ¿Por qué es ineficiente la política monetaria en México? Una explicación kaleckiana.</td>
             </tr>
 
             <tr>
@@ -306,7 +463,7 @@
             <tr>
               <td>05-mar-2025</td>
               <td>Dra. Isabel Osorio-Caballero, UNAM</td>
-              <td>Brecha digital, desigualdades económicas y sociales en México</td>
+              <td>Brecha digital, desigualdades económicas y sociales en Méxic</td>
             </tr>
             <tr>
               <td>05-mar-2025</td>
@@ -377,7 +534,7 @@
     });
   })();
 
-  // --- Filtro de tabla (texto + rango de fechas) ---
+  // --- Filtro de tabla (texto + rango de fechas) [Feb–Jun] ---
   (function(){
     const table = document.getElementById("archivoTable");
     if (!table) return;
@@ -398,6 +555,88 @@
 
     function parseFechaCell(text){
       // Espera "dd-mmm-aaaa" (ej. 04-jun-2025)
+      const s = (text || "").trim().toLowerCase();
+      const m = s.match(/^(\d{1,2})-([a-zñ]{3})-(\d{4})$/);
+      if (!m) return null;
+      const day = parseInt(m[1], 10);
+      const mon = monthMap[m[2]];
+      const year = parseInt(m[3], 10);
+      if (mon === undefined) return null;
+      return new Date(year, mon, day, 12, 0, 0, 0);
+    }
+
+    const rowMeta = rows.map(r => {
+      const cells = r.querySelectorAll("td");
+      const fechaText = cells[0]?.innerText || "";
+      const ponenteText = cells[1]?.innerText || "";
+      const temaText = cells[2]?.innerText || "";
+      return {
+        row: r,
+        fecha: parseFechaCell(fechaText),
+        hayContenido: (ponenteText + " " + temaText).toLowerCase()
+      };
+    });
+
+    function applyFilters(){
+      const needle = (q.value || "").trim().toLowerCase();
+      const fromVal = fromDate.value ? new Date(fromDate.value + "T12:00:00") : null;
+      const toVal = toDate.value ? new Date(toDate.value + "T12:00:00") : null;
+
+      let shown = 0;
+
+      rowMeta.forEach(m => {
+        let ok = true;
+
+        if (needle) ok = ok && m.hayContenido.includes(needle);
+
+        if (ok && (fromVal || toVal) && m.fecha) {
+          if (fromVal && m.fecha < fromVal) ok = false;
+          if (toVal && m.fecha > toVal) ok = false;
+        }
+
+        m.row.classList.toggle("hidden-row", !ok);
+        if (ok) shown++;
+      });
+
+      countHint.textContent = `${shown} de ${rows.length} filas`;
+    }
+
+    function clearAll(){
+      q.value = "";
+      fromDate.value = "";
+      toDate.value = "";
+      applyFilters();
+      q.focus();
+    }
+
+    q.addEventListener("input", applyFilters);
+    fromDate.addEventListener("change", applyFilters);
+    toDate.addEventListener("change", applyFilters);
+    clearBtn.addEventListener("click", clearAll);
+
+    applyFilters();
+  })();
+
+  // --- Filtro de tabla (texto + rango de fechas) [Ago–Dic] ---
+  (function(){
+    const table = document.getElementById("archivoTable2");
+    if (!table) return;
+
+    const tbody = table.querySelector("tbody");
+    const rows = Array.from(tbody.querySelectorAll("tr"));
+
+    const q = document.getElementById("q2");
+    const fromDate = document.getElementById("fromDate2");
+    const toDate = document.getElementById("toDate2");
+    const clearBtn = document.getElementById("clearBtn2");
+    const countHint = document.getElementById("countHint2");
+
+    const monthMap = {
+      ene: 0, feb: 1, mar: 2, abr: 3, may: 4, jun: 5,
+      jul: 6, ago: 7, sep: 8, oct: 9, nov: 10, dic: 11
+    };
+
+    function parseFechaCell(text){
       const s = (text || "").trim().toLowerCase();
       const m = s.match(/^(\d{1,2})-([a-zñ]{3})-(\d{4})$/);
       if (!m) return null;
