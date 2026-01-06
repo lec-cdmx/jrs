@@ -49,6 +49,38 @@
     .filters .smallhint { font-size: 12px; opacity: .75; margin: 6px 0 0; }
     .muted { opacity: .75; }
     .hidden-row { display: none; }
+
+    /* Cards colapsables (sin tocar tu CSS global) */
+    .collapse-toggle{
+      width:100%;
+      text-align:left;
+      border:0;
+      padding:0;
+      background:transparent;
+      color:inherit;
+      cursor:pointer;
+    }
+    .collapse-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .chev{
+      width:34px;
+      height:34px;
+      border-radius:12px;
+      display:grid;
+      place-items:center;
+      border:1px solid rgba(7,18,41,.10);
+      background: rgba(255,255,255,.55);
+      transition: transform .18s ease, filter .18s ease;
+      flex: 0 0 auto;
+    }
+    .chev svg{ display:block; }
+    .collapse-toggle:hover .chev{ filter: brightness(.98); }
+    .collapse-toggle[aria-expanded="true"] .chev{ transform: rotate(180deg); }
+    .collapse-body{ margin-top: 10px; }
   </style>
 </head>
 <body>
@@ -93,196 +125,220 @@
        EDICIÓN 2025 · AGOSTO–DICIEMBRE (PENDIENTE)
        ======================================================= -->
   <section class="card" style="margin-top:14px;">
-    <h2>Edición 2025 · Agosto–Diciembre</h2>
-    <p class="lead">[Pendiente de captura]</p>
+    <button class="collapse-toggle" type="button" aria-expanded="false" aria-controls="ed-2025-ago-dic">
+      <div class="collapse-head">
+        <h2 style="margin:0;">Edición 2025 · Agosto–Diciembre</h2>
+        <span class="chev" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="none">
+            <path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </div>
+    </button>
+
+    <div id="ed-2025-ago-dic" class="collapse-body" hidden>
+      <p class="lead">[Pendiente de captura]</p>
+    </div>
   </section>
 
   <!-- =======================================================
        EDICIÓN 2025 · FEBRERO–JUNIO (orden inverso)
        ======================================================= -->
   <section class="card" style="margin-top:14px;">
-    <h2>Edición 2025 · Febrero–Junio</h2>
+    <button class="collapse-toggle" type="button" aria-expanded="true" aria-controls="ed-2025-feb-jun">
+      <div class="collapse-head">
+        <h2 style="margin:0;">Edición 2025 · Febrero–Junio</h2>
+        <span class="chev" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="none">
+            <path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </div>
+    </button>
 
-    <!-- Buscador / filtros -->
-    <div class="filters" aria-label="Filtros de búsqueda">
-      <div class="field" style="flex: 2 1 280px;">
-        <label for="q">Buscar (ponente o tema)</label>
-        <input id="q" type="text" placeholder="Ej. UNAM, pobreza, Utopías, BIS..." autocomplete="off" />
+    <div id="ed-2025-feb-jun" class="collapse-body">
+      <!-- Buscador / filtros -->
+      <div class="filters" aria-label="Filtros de búsqueda">
+        <div class="field" style="flex: 2 1 280px;">
+          <label for="q">Buscar (ponente o tema)</label>
+          <input id="q" type="text" placeholder="Ej. UNAM, pobreza, Utopías, BIS..." autocomplete="off" />
+        </div>
+
+        <div class="field">
+          <label for="fromDate">Desde</label>
+          <input id="fromDate" type="date" />
+        </div>
+
+        <div class="field">
+          <label for="toDate">Hasta</label>
+          <input id="toDate" type="date" />
+        </div>
+
+        <div class="field" style="min-width:140px;">
+          <button class="btn" id="clearBtn" type="button">Limpiar</button>
+          <div class="smallhint muted" id="countHint"></div>
+        </div>
       </div>
 
-      <div class="field">
-        <label for="fromDate">Desde</label>
-        <input id="fromDate" type="date" />
+      <div class="table-wrap" style="margin-top:12px;">
+        <table id="archivoTable">
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Ponente</th>
+              <th>Tema</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr>
+              <td>04-jun-2025</td>
+              <td>Dr. Alfonso Rivera Illingworth, ITESM</td>
+              <td>Knowledge Divides in the Era of Big Data: Using Wikipedia Data to Identify and Measure Divides across Countries and Languages</td>
+            </tr>
+            <tr>
+              <td>04-jun-2025</td>
+              <td>Juan Carlos Ambrosio Montoya, LEC CCM</td>
+              <td>Análisis de los Vehículos Eléctricos en México</td>
+            </tr>
+
+            <tr>
+              <td>28-may-2025</td>
+              <td>Dra. Patricia López Rodríguez, ITESM</td>
+              <td>The Effect of Social Capital on Environment Caring</td>
+            </tr>
+            <tr>
+              <td>28-may-2025</td>
+              <td>Braulio Jahel Ramírez Cabrera, LEC-LTP CCM</td>
+              <td>De la migración a la modernización: cómo los extranjeros impulsan la innovación y el desarrollo económico agrícola</td>
+            </tr>
+
+            <tr>
+              <td>21-may-2025</td>
+              <td>Mtro. Marco Méndez Atienza, ITESM</td>
+              <td>
+                <a href="materiales/210525_MMA.pdf" target="_blank" rel="noopener">
+                  Sí al desarme, sí a la paz: Measuring the Impact of Mexico City's Gun Buyback Initiative
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>21-may-2025</td>
+              <td>Luis Chávez López, LEC-LRI CCM</td>
+              <td>Análisis estratégico: Más allá de una simple falta</td>
+            </tr>
+
+            <tr>
+              <td>14-may-2025</td>
+              <td>Diego Ceciliano Díaz, LEC-LTP CCM<br>José Sánchez, LED-LRI CCM</td>
+              <td>Crisis hídrica y su impacto en la producción agrícola de la costa de Hermosillo</td>
+            </tr>
+            <tr>
+              <td>14-may-2025</td>
+              <td>
+                Sergio Alejandro Iglesias Ramírez, LEC-LTP CSF<br>
+                Nadia Alexandra Lozano Marchán, LEC-LRI CSF<br>
+                Valentina Muhlia Gutiérrez, LEC-LRI CSF<br>
+                José Ilyan Valdivia Rivera, LRI-LTP CSF<br>
+                Alexa Jiménez Archundia, LEC CSF
+              </td>
+              <td>Hijos del maíz: cultural resilience and community responses to food insecurity</td>
+            </tr>
+
+            <tr>
+              <td>23-abr-2025</td>
+              <td>Dr. Carlos Madeira, BIS</td>
+              <td>Macroeconomic impact of extreme weather events</td>
+            </tr>
+            <tr>
+              <td>23-abr-2025</td>
+              <td>Alberto Genaro Gómez Castro, LEC CCM<br>Fidel Maldonado Luna, LEC CCM</td>
+              <td>Efectos de la movilidad social y la ubicación de incrementos en el costo de vivienda</td>
+            </tr>
+
+            <tr>
+              <td>09-abr-2025</td>
+              <td>Mtro. Jesús Paredes, Coneval</td>
+              <td>La pobreza en las metrópolis: un esfuerzo multidisciplinario</td>
+            </tr>
+            <tr>
+              <td>09-abr-2025</td>
+              <td>Priscilla Tong Tse Zhao, LED-LEC CCM</td>
+              <td>De la pantalla grande a la patria: películas, política e identidad estadounidense</td>
+            </tr>
+
+            <tr>
+              <td>02-abr-2025</td>
+              <td>Dr. Adrián Escamilla Trejo, UNAM</td>
+              <td>Cadenas Globales de Valor. Retos y oportunidades de inserción de las Pymes del sector metalmecánico en México</td>
+            </tr>
+            <tr>
+              <td>02-abr-2025</td>
+              <td>Karlo André Romero Hernández, LEC CCM</td>
+              <td>Tecno-feudalismo: Corporativismos tecnológicos coloniales.</td>
+            </tr>
+
+            <tr>
+              <td>26-mar-2025</td>
+              <td>
+                Dr. Roberto Valencia Arriaga, UNAM<br>
+                Héctor Damián Castillo González, LEC-LTP CCM (Comentador)<br>
+                Sara Navarro Guevara, LEC CCM (Comentadora)
+              </td>
+              <td>Presentación del libro: ¿Por qué es ineficiente la política monetaria en México? Una explicación kaleckiana.</td>
+            </tr>
+
+            <tr>
+              <td>12-mar-2025</td>
+              <td>
+                Sergio A. Bárcena, Buró Parlamentario<br>
+                Óscar Medina Llanos, Buró Parlamentario<br>
+                Paula Reina Aponte, LRI-LTP CCM<br>
+                Luis Nemecio Aguirre Flores, LEC-LTOP CCM
+              </td>
+              <td>Fuerza Política de las Legisladoras en los Congresos Locales de México</td>
+            </tr>
+
+            <tr>
+              <td>05-mar-2025</td>
+              <td>Dra. Isabel Osorio-Caballero, UNAM</td>
+              <td>Brecha digital, desigualdades económicas y sociales en Méxic</td>
+            </tr>
+            <tr>
+              <td>05-mar-2025</td>
+              <td>Andrés Felipe Gutiérrez Jaramillo, LEC-LRI CCM</td>
+              <td>
+                <a href="materiales/050325_AFGJ.pdf" target="_blank" rel="noopener">
+                  El efecto de las Utopías sobre la incidencia delictiva en Iztapalapa
+                </a>
+              </td>
+            </tr>
+
+            <tr>
+              <td>26-feb-2025</td>
+              <td>Dr. Miguel Ángel Mascarúa, Banco de México</td>
+              <td>Imperfect Law Enforcement, Informality, and Organized Crime</td>
+            </tr>
+            <tr>
+              <td>26-feb-2025</td>
+              <td>Alexa Contreras Contreras, LEC-LRI CCM</td>
+              <td>Cerrando la Brecha Habitacional: Inteligencia de Datos para Mujeres Jefas de Hogar y Acceso al Financiamiento</td>
+            </tr>
+
+            <tr>
+              <td>19-feb-2025</td>
+              <td>Sesión de Arranque</td>
+              <td>—</td>
+            </tr>
+
+          </tbody>
+        </table>
       </div>
 
-      <div class="field">
-        <label for="toDate">Hasta</label>
-        <input id="toDate" type="date" />
-      </div>
-
-      <div class="field" style="min-width:140px;">
-        <button class="btn" id="clearBtn" type="button">Limpiar</button>
-        <div class="smallhint muted" id="countHint"></div>
-      </div>
+      <p class="small">
+        Archivo correspondiente al primer semestre de 2025. Los materiales se agregarán conforme estén disponibles públicamente.
+      </p>
     </div>
-
-    <div class="table-wrap" style="margin-top:12px;">
-      <table id="archivoTable">
-        <thead>
-          <tr>
-            <th>Fecha</th>
-            <th>Ponente</th>
-            <th>Tema</th>
-          </tr>
-        </thead>
-        <tbody>
-
-          <tr>
-            <td>04-jun-2025</td>
-            <td>Dr. Alfonso Rivera Illingworth, ITESM</td>
-            <td>Knowledge Divides in the Era of Big Data: Using Wikipedia Data to Identify and Measure Divides across Countries and Languages</td>
-          </tr>
-          <tr>
-            <td>04-jun-2025</td>
-            <td>Juan Carlos Ambrosio Montoya, LEC CCM</td>
-            <td>Análisis de los Vehículos Eléctricos en México</td>
-          </tr>
-
-          <tr>
-            <td>28-may-2025</td>
-            <td>Dra. Patricia López Rodríguez, ITESM</td>
-            <td>The Effect of Social Capital on Environment Caring</td>
-          </tr>
-          <tr>
-            <td>28-may-2025</td>
-            <td>Braulio Jahel Ramírez Cabrera, LEC-LTP CCM</td>
-            <td>De la migración a la modernización: cómo los extranjeros impulsan la innovación y el desarrollo económico agrícola</td>
-          </tr>
-
-          <tr>
-            <td>21-may-2025</td>
-            <td>Mtro. Marco Méndez Atienza, ITESM</td>
-            <td>
-              <a href="materiales/210525_MMA.pdf" target="_blank" rel="noopener">
-                Sí al desarme, sí a la paz: Measuring the Impact of Mexico City's Gun Buyback Initiative
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td>21-may-2025</td>
-            <td>Luis Chávez López, LEC-LRI CCM</td>
-            <td>Análisis estratégico: Más allá de una simple falta</td>
-          </tr>
-
-          <tr>
-            <td>14-may-2025</td>
-            <td>Diego Ceciliano Díaz, LEC-LTP CCM<br>José Sánchez, LED-LRI CCM</td>
-            <td>Crisis hídrica y su impacto en la producción agrícola de la costa de Hermosillo</td>
-          </tr>
-          <tr>
-            <td>14-may-2025</td>
-            <td>
-              Sergio Alejandro Iglesias Ramírez, LEC-LTP CSF<br>
-              Nadia Alexandra Lozano Marchán, LEC-LRI CSF<br>
-              Valentina Muhlia Gutiérrez, LEC-LRI CSF<br>
-              José Ilyan Valdivia Rivera, LRI-LTP CSF<br>
-              Alexa Jiménez Archundia, LEC CSF
-            </td>
-            <td>Hijos del maíz: cultural resilience and community responses to food insecurity</td>
-          </tr>
-
-          <tr>
-            <td>23-abr-2025</td>
-            <td>Dr. Carlos Madeira, BIS</td>
-            <td>Macroeconomic impact of extreme weather events</td>
-          </tr>
-          <tr>
-            <td>23-abr-2025</td>
-            <td>Alberto Genaro Gómez Castro, LEC CCM<br>Fidel Maldonado Luna, LEC CCM</td>
-            <td>Efectos de la movilidad social y la ubicación de incrementos en el costo de vivienda</td>
-          </tr>
-
-          <tr>
-            <td>09-abr-2025</td>
-            <td>Mtro. Jesús Paredes, Coneval</td>
-            <td>La pobreza en las metrópolis: un esfuerzo multidisciplinario</td>
-          </tr>
-          <tr>
-            <td>09-abr-2025</td>
-            <td>Priscilla Tong Tse Zhao, LED-LEC CCM</td>
-            <td>De la pantalla grande a la patria: películas, política e identidad estadounidense</td>
-          </tr>
-
-          <tr>
-            <td>02-abr-2025</td>
-            <td>Dr. Adrián Escamilla Trejo, UNAM</td>
-            <td>Cadenas Globales de Valor. Retos y oportunidades de inserción de las Pymes del sector metalmecánico en México</td>
-          </tr>
-          <tr>
-            <td>02-abr-2025</td>
-            <td>Karlo André Romero Hernández, LEC CCM</td>
-            <td>Tecno-feudalismo: Corporativismos tecnológicos coloniales.</td>
-          </tr>
-
-          <tr>
-            <td>26-mar-2025</td>
-            <td>
-              Dr. Roberto Valencia Arriaga, UNAM<br>
-              Héctor Damián Castillo González, LEC-LTP CCM (Comentador)<br>
-              Sara Navarro Guevara, LEC CCM (Comentadora)
-            </td>
-            <td>Presentación del libro: ¿Por qué es ineficiente la política monetaria en México? Una explicación kaleckiana.</td>
-          </tr>
-
-          <tr>
-            <td>12-mar-2025</td>
-            <td>
-              Sergio A. Bárcena, Buró Parlamentario<br>
-              Óscar Medina Llanos, Buró Parlamentario<br>
-              Paula Reina Aponte, LRI-LTP CCM<br>
-              Luis Nemecio Aguirre Flores, LEC-LTOP CCM
-            </td>
-            <td>Fuerza Política de las Legisladoras en los Congresos Locales de México</td>
-          </tr>
-
-          <tr>
-            <td>05-mar-2025</td>
-            <td>Dra. Isabel Osorio-Caballero, UNAM</td>
-            <td>Brecha digital, desigualdades económicas y sociales en Méxic</td>
-          </tr>
-          <tr>
-  <td>05-mar-2025</td>
-  <td>Andrés Felipe Gutiérrez Jaramillo, LEC-LRI CCM</td>
-  <td>
-    <a href="materiales/050325_AFGJ.pdf" target="_blank" rel="noopener">
-      El efecto de las Utopías sobre la incidencia delictiva en Iztapalapa
-    </a>
-  </td>
-</tr>
-          <tr>
-            <td>26-feb-2025</td>
-            <td>Dr. Miguel Ángel Mascarúa, Banco de México</td>
-            <td>Imperfect Law Enforcement, Informality, and Organized Crime</td>
-          </tr>
-          <tr>
-            <td>26-feb-2025</td>
-            <td>Alexa Contreras Contreras, LEC-LRI CCM</td>
-            <td>Cerrando la Brecha Habitacional: Inteligencia de Datos para Mujeres Jefas de Hogar y Acceso al Financiamiento</td>
-          </tr>
-
-          <tr>
-            <td>19-feb-2025</td>
-            <td>Sesión de Arranque</td>
-            <td>—</td>
-          </tr>
-
-        </tbody>
-      </table>
-    </div>
-
-    <p class="small">
-      Archivo correspondiente al primer semestre de 2025. Los materiales se agregarán conforme estén disponibles públicamente.
-    </p>
   </section>
 </main>
 
@@ -297,9 +353,31 @@
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 
+  // --- Cards colapsables (por edición) ---
+  (function(){
+    const toggles = document.querySelectorAll(".collapse-toggle");
+    toggles.forEach((btn) => {
+      const id = btn.getAttribute("aria-controls");
+      const panel = document.getElementById(id);
+      if (!panel) return;
+
+      // Estado inicial: si aria-expanded=false => hidden
+      const expanded = btn.getAttribute("aria-expanded") === "true";
+      panel.hidden = !expanded;
+
+      btn.addEventListener("click", () => {
+        const isExpanded = btn.getAttribute("aria-expanded") === "true";
+        btn.setAttribute("aria-expanded", String(!isExpanded));
+        panel.hidden = isExpanded;
+      });
+    });
+  })();
+
   // --- Filtro de tabla (texto + rango de fechas) ---
   (function(){
     const table = document.getElementById("archivoTable");
+    if (!table) return;
+
     const tbody = table.querySelector("tbody");
     const rows = Array.from(tbody.querySelectorAll("tr"));
 
@@ -323,11 +401,9 @@
       const mon = monthMap[m[2]];
       const year = parseInt(m[3], 10);
       if (mon === undefined) return null;
-      // Fecha a mediodía para evitar rollovers por timezone
       return new Date(year, mon, day, 12, 0, 0, 0);
     }
 
-    // Guardamos fecha parseada y texto “buscable” por fila
     const rowMeta = rows.map(r => {
       const cells = r.querySelectorAll("td");
       const fechaText = cells[0]?.innerText || "";
@@ -336,14 +412,12 @@
       return {
         row: r,
         fecha: parseFechaCell(fechaText),
-        hayFecha: !!parseFechaCell(fechaText),
         hayContenido: (ponenteText + " " + temaText).toLowerCase()
       };
     });
 
     function applyFilters(){
       const needle = (q.value || "").trim().toLowerCase();
-
       const fromVal = fromDate.value ? new Date(fromDate.value + "T12:00:00") : null;
       const toVal = toDate.value ? new Date(toDate.value + "T12:00:00") : null;
 
@@ -352,12 +426,8 @@
       rowMeta.forEach(m => {
         let ok = true;
 
-        // Texto
-        if (needle) {
-          ok = ok && m.hayContenido.includes(needle);
-        }
+        if (needle) ok = ok && m.hayContenido.includes(needle);
 
-        // Fechas (si no parsea la fecha, no la ocultamos por rango)
         if (ok && (fromVal || toVal) && m.fecha) {
           if (fromVal && m.fecha < fromVal) ok = false;
           if (toVal && m.fecha > toVal) ok = false;
@@ -383,7 +453,6 @@
     toDate.addEventListener("change", applyFilters);
     clearBtn.addEventListener("click", clearAll);
 
-    // Estado inicial
     applyFilters();
   })();
 </script>
