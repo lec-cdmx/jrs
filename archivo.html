@@ -80,7 +80,26 @@
     .chev svg{ display:block; }
     .collapse-toggle:hover .chev{ filter: brightness(.98); }
     .collapse-toggle[aria-expanded="false"] .chev{ transform: rotate(180deg); }
-    .collapse-body{ margin-top: 10px; }
+
+    /* === Animación del cuerpo colapsable (evita "de sopetón") === */
+    .collapse-body{
+      margin-top: 10px;
+
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(-4px);
+
+      transition: max-height .35s ease, opacity .25s ease, transform .25s ease;
+      will-change: max-height, opacity, transform;
+    }
+    .collapse-body.is-open{
+      max-height: 5000px; /* suficiente para tabla + filtros */
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Respeta tu helper de "hidden-row" para filtros */
   </style>
 </head>
 <body>
@@ -136,8 +155,7 @@
       </div>
     </button>
 
-    <div id="ed-2025-ago-dic" class="collapse-body" hidden>
-
+    <div id="ed-2025-ago-dic" class="collapse-body" aria-hidden="true">
       <!-- Buscador / filtros -->
       <div class="filters" aria-label="Filtros de búsqueda">
         <div class="field" style="flex: 2 1 280px;">
@@ -333,7 +351,7 @@
       </div>
     </button>
 
-    <div id="ed-2025-feb-jun" class="collapse-body">
+    <div id="ed-2025-feb-jun" class="collapse-body" aria-hidden="true">
       <!-- Buscador / filtros -->
       <div class="filters" aria-label="Filtros de búsqueda">
         <div class="field" style="flex: 2 1 280px;">
@@ -561,7 +579,7 @@
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 
-  // --- Cards colapsables (por edición) ---
+  // --- Cards colapsables (por edición) [animadas] ---
   (function(){
     const toggles = document.querySelectorAll(".collapse-toggle");
     toggles.forEach((btn) => {
@@ -569,14 +587,17 @@
       const panel = document.getElementById(id);
       if (!panel) return;
 
-      // Estado inicial: si aria-expanded=false => hidden
+      // Estado inicial (sin "hidden": usamos clase)
       const expanded = btn.getAttribute("aria-expanded") === "true";
-      panel.hidden = !expanded;
+      panel.classList.toggle("is-open", expanded);
+      panel.setAttribute("aria-hidden", String(!expanded));
 
       btn.addEventListener("click", () => {
         const isExpanded = btn.getAttribute("aria-expanded") === "true";
         btn.setAttribute("aria-expanded", String(!isExpanded));
-        panel.hidden = isExpanded;
+
+        panel.classList.toggle("is-open", !isExpanded);
+        panel.setAttribute("aria-hidden", String(isExpanded));
       });
     });
   })();
