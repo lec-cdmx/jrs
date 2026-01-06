@@ -7,30 +7,221 @@
 
   <link rel="icon" href="assets/favicon.png" type="image/png" />
   <link rel="stylesheet" href="assets/style.css" />
+
+  <style>
+    /* Home-only polish (sin tocar tu CSS global) */
+    .home-hero{
+      margin-top: 14px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 22px;
+      padding: 28px 22px;
+      background:
+        radial-gradient(1200px 420px at 10% -10%, rgba(0,51,160,.20), transparent 60%),
+        radial-gradient(900px 380px at 90% 0%, rgba(0,164,153,.16), transparent 55%),
+        linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.82));
+      border: 1px solid rgba(7,18,41,.08);
+      box-shadow: 0 18px 50px rgba(7,18,41,.10);
+    }
+    .home-hero::after{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background:
+        radial-gradient(700px 220px at 30% 12%, rgba(0,51,160,.14), transparent 55%),
+        radial-gradient(650px 220px at 70% 20%, rgba(0,164,153,.12), transparent 55%);
+      pointer-events:none;
+      filter: blur(1px);
+      opacity:.9;
+    }
+    .home-hero > *{ position: relative; z-index: 1; }
+
+    .hero-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .hero-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(7,18,41,.10);
+      background: rgba(255,255,255,.75);
+      font-size: 13px;
+      opacity: .95;
+    }
+    .hero-badge b{ font-weight: 800; }
+    .hero-badge .dot{
+      width: 7px; height: 7px; border-radius: 99px;
+      background: #00A499;
+      box-shadow: 0 0 0 3px rgba(0,164,153,.14);
+    }
+
+    .hero-grid{
+      margin-top: 18px;
+      display:grid;
+      grid-template-columns: 1.6fr .9fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+    @media (max-width: 920px){
+      .hero-grid{ grid-template-columns: 1fr; }
+    }
+
+    .hero-title{
+      margin: 10px 0 0;
+      font-size: clamp(34px, 4.8vw, 58px);
+      letter-spacing: -0.02em;
+      line-height: 1.03;
+    }
+    .hero-sub{
+      margin: 10px 0 0;
+      font-size: 15px;
+      opacity: .80;
+      max-width: 60ch;
+    }
+
+    .dynamic-line{
+      display:inline-flex;
+      align-items:baseline;
+      gap: 8px;
+      margin-top: 14px;
+      font-size: 15px;
+      opacity: .90;
+    }
+    .dynamic-pill{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(0,51,160,.06);
+      border: 1px solid rgba(0,51,160,.14);
+      font-weight: 650;
+    }
+    .dynamic-word{
+      color: #0033A0;
+      font-weight: 850;
+      letter-spacing: .01em;
+    }
+    .cursor{
+      opacity: .5;
+      animation: blink 1s step-end infinite;
+    }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    .logo-card{
+      border-radius: 20px;
+      border: 1px solid rgba(7,18,41,.08);
+      background: rgba(255,255,255,.78);
+      box-shadow: 0 14px 35px rgba(7,18,41,.08);
+      padding: 18px;
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      text-align:center;
+    }
+    .logo-card img{
+      width: min(220px, 70%);
+      height: auto;
+      filter: drop-shadow(0 12px 26px rgba(0,0,0,.10));
+    }
+    .logo-card .mini{
+      font-size: 13px;
+      opacity: .78;
+      margin: 0;
+    }
+
+    .cta-row{
+      margin-top: 16px;
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .cta-row a{
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(7,18,41,.10);
+      background: rgba(255,255,255,.78);
+      box-shadow: 0 12px 28px rgba(7,18,41,.08);
+      font-weight: 750;
+    }
+    .cta-row a:hover{ filter: brightness(.99); }
+
+    .stats-row{
+      margin-top: 16px;
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+    @media (max-width: 700px){
+      .stats-row{ grid-template-columns: 1fr; }
+    }
+    .statbox{
+      padding: 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(7,18,41,.08);
+      background: rgba(255,255,255,.76);
+    }
+    .statbox .num{
+      font-size: 26px;
+      font-weight: 900;
+      letter-spacing: -0.01em;
+    }
+    .statbox .label{
+      margin-top: 4px;
+      font-size: 13px;
+      opacity: .78;
+    }
+
+    .section-head{
+      margin-top: 18px;
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .section-head h2{ margin: 0; }
+    .section-head p{ margin: 0; opacity: .75; }
+
+    .smallfix{ margin-top:12px; }
+  </style>
 </head>
+
 <body>
 <header>
   <div class="wrap">
     <div class="topbar">
       <div class="brand">
         <img
-  src="assets/logo-jrs.svg"
-  alt="Logo JRS"
-  class="logo-header"
-  onerror="this.onerror=null;this.src='assets/logo-jrs.png';"
-/>
+          src="assets/logo-jrs.svg"
+          alt="Logo JRS"
+          class="logo-header"
+          onerror="this.onerror=null;this.src='assets/logo-jrs.png';"
+        />
         <div class="brandtext">
           <p class="title">Junior Research Seminar</p>
           <div class="sub">Licenciatura en Economía · Tecnológico de Monterrey · Campus Ciudad de México</div>
         </div>
       </div>
       <div class="tec-logo-wrap">
-  <img
-    src="assets/tecnologico-de-monterrey-blue.png"
-    alt="Tecnológico de Monterrey"
-    class="tec-logo"
-  />
-</div>
+        <img
+          src="assets/tecnologico-de-monterrey-blue.png"
+          alt="Tecnológico de Monterrey"
+          class="tec-logo"
+        />
+      </div>
     </div>
 
     <nav>
@@ -45,85 +236,103 @@
 </header>
 
 <main class="wrap">
-  <section class="hero">
-    <div class="hero-inner">
+  <!-- HERO: minimal, más “poster”, con movimiento sutil -->
+  <section class="home-hero">
+    <div class="hero-top">
+      <div class="hero-badge">
+        <span class="dot" aria-hidden="true"></span>
+        <span><b>JRS</b> · iniciativa de la <b>Licenciatura en Economía (CCM)</b></span>
+      </div>
+    </div>
+
+    <div class="hero-grid">
       <div>
-        <div class="hero-kicker">
-          <span class="kicker-tag"><strong>JRS</strong> · iniciativa de la Licenciatura en Economía (CCM)</span>
-          <span class="dynamic-line">
-            Semillero de <span class="dynamic-word" id="rotatingWord">ideas</span><span class="cursor">|</span>
+        <h1 class="hero-title">Junior Research Seminar</h1>
+
+        <div class="dynamic-line" aria-label="Línea dinámica">
+          <span class="dynamic-pill">
+            Semillero de <span class="dynamic-word" id="rotatingWord">ideas</span><span class="cursor" aria-hidden="true">|</span>
           </span>
+          <span style="opacity:.75;">para investigación, discusión y retroalimentación útil</span>
         </div>
 
-        <h1>
-  Un espacio para presentar investigación y discutir temas <span class="hl-blue">económicos y sociales</span>, con retroalimentación útil.
-</h1>
-
-
-        <p class="lead">
-El Junior Research Seminar es una iniciativa de la Licenciatura en Economía del Campus Ciudad de México. Su objetivo es crear un espacio donde investigadorxs senior y junior —incluyendo alumnxs activxs— presenten trabajos de investigación concluidos o en proceso, con la intención de que cada sesión funcione como un semillero de ideas, retroalimentación y discusión académica. El seminario inició en febrero de 2025.
+        <p class="hero-sub">
+          Un espacio para presentar trabajos concluidos o en proceso, con conversación académica clara y
+          retroalimentación que ayude a mejorar los proyectos. El seminario inició en febrero de 2025.
         </p>
 
-        <div class="actions actions-multi">
-  <a class="btn-solid c1" href="calendario.html">Calendario</a>
-  <a class="btn-solid c2" href="archivo.html">Archivo</a>
-  <a class="btn-solid c3" href="normas.html">Normas</a>
-  <a class="btn-solid c4" href="preparatoria.html">JRS x PrepaTec</a>
-</div>
-        <div class="stats">
-          <div class="stat">
+        <div class="cta-row">
+          <a href="calendario.html">Ver calendario</a>
+          <a href="archivo.html">Ver archivo</a>
+          <a href="normas.html">Ver normas</a>
+          <a href="preparatoria.html">JRS x PrepaTec</a>
+        </div>
+
+        <div class="stats-row" aria-label="Indicadores del JRS">
+          <div class="statbox">
             <div class="num" id="monthsSince">0</div>
-            <div class="label">meses desde el arranque </div>
+            <div class="label">meses desde el arranque</div>
           </div>
-          <div class="stat">
+          <div class="statbox">
             <div class="num" id="daysSince">0</div>
             <div class="label">días construyendo comunidad</div>
           </div>
-          <div class="stat">
+          <div class="statbox">
             <div class="num">23</div>
             <div class="label">sesiones del JRS</div>
           </div>
-
         </div>
 
-        <p class="small" style="margin-top:12px;">
-          ¿Quieres prsentar algo? En <a href="contacto.html">Contacto</a> está la plantilla mínima para hacerlo rápido.
+        <p class="small smallfix">
+          ¿Quieres presentar algo? En <a href="contacto.html">Contacto</a> está la plantilla mínima para hacerlo rápido.
         </p>
       </div>
 
-      <aside class="logo-panel">
-        <img class="logo-big" src="assets/logo-jrs.svg" alt="Logo Junior Research Seminar" onerror="this.onerror=null;this.src='assets/logo-jrs.png';" />
-        <div class="logo-caption">
-        </div>
+      <aside class="logo-card" aria-label="Logo JRS">
+        <img
+          src="assets/logo-jrs.svg"
+          alt="Logo Junior Research Seminar"
+          onerror="this.onerror=null;this.src='assets/logo-jrs.png';"
+        />
+        <p class="mini">LEC · Tec de Monterrey · CCM</p>
       </aside>
     </div>
   </section>
 
-  <div class="grid">
+  <!-- CONTENIDO -->
+  <div class="section-head">
+    <h2>Cómo funciona</h2>
+    <p class="small">Formato y tiempos en <a href="normas.html">Normas</a>.</p>
+  </div>
+
+  <div class="grid" style="margin-top:12px;">
     <section class="card">
-<h2>Qué pasa en una sesión</h2>
-<p>
-  En cada sesión, unx investigadorx senior —del Tecnológico de Monterrey o de una institución externa—
-  presenta un trabajo de investigación. Alternativamente, la presentación puede estar a cargo de
-  <strong>unx alumnx activx</strong> de la Licenciatura en Economía o de otras áreas de las ciencias sociales.
-</p>
-<p>
-  Las sesiones están abiertas a alumnxs de todos los semestres, quienes asisten para escuchar,
-  participar en la discusión y ofrecer retroalimentación. Se busca fomentar un diálogo
-  interactivo, abierto y productivo, con énfasis en mejorar los trabajos presentados.
-</p>
-<p class="small">
-  El formato y los tiempos de cada sesión se describen en <a href="normas.html">Normas</a>.
-</p>
+      <h2>Qué pasa en una sesión</h2>
+      <p>
+        En cada sesión, unx investigadorx senior (del Tecnológico de Monterrey o de una institución externa)
+        presenta un trabajo de investigación. Alternativamente, la presentación puede estar a cargo de
+        <strong>unx alumnx activx</strong> de la Licenciatura en Economía o de otras áreas de las ciencias sociales.
+      </p>
+      <p>
+        Las sesiones están abiertas a alumnxs de todos los semestres, quienes asisten para escuchar,
+        participar en la discusión y ofrecer retroalimentación. Se busca fomentar un diálogo interactivo,
+        abierto y productivo, con énfasis en mejorar los trabajos presentados.
+      </p>
+      <p class="small">
+        Sugerencia práctica: si traes una pregunta concreta (sobre identificación, datos o narrativa), la sesión rinde el doble.
+      </p>
     </section>
 
     <section class="card">
       <h2>Quién puede presentar</h2>
       <ul>
-        <li>Investigadorxs senior invitados.</li>
+        <li>Investigadorxs senior invitadxs.</li>
         <li>Investigadorxs junior: alumnxs activxs con proyectos en curso o concluidos.</li>
         <li>Trabajos teóricos, empíricos o metodológicos.</li>
       </ul>
+      <p class="small">
+        Para proponer sesión: revisa <a href="normas.html">Normas</a> y usa la plantilla de <a href="contacto.html">Contacto</a>.
+      </p>
     </section>
   </div>
 </main>
@@ -137,30 +346,24 @@ El Junior Research Seminar es una iniciativa de la Licenciatura en Economía del
 </footer>
 
 <script>
-  // Rotating word (simple, zip-like vibe)
+  // Rotating word (más sutil: menos velocidad, menos “frenético”)
   const words = ["ideas", "feedback", "discusión", "papers", "métodos", "preguntas"];
   let wi = 0;
   const rotating = document.getElementById("rotatingWord");
   setInterval(() => {
     wi = (wi + 1) % words.length;
     rotating.textContent = words[wi];
-  }, 1400);
+  }, 1800);
 
   // Counters since Feb 2025
   const start = new Date("2025-02-01T00:00:00");
   const now = new Date();
-
   const ms = now - start;
-  const days = Math.floor(ms / (1000*60*60*24));
-
-  // months difference (approx, but stable)
+  const days = Math.floor(ms / (1000 * 60 * 60 * 24));
   const months = (now.getFullYear() - start.getFullYear()) * 12 + (now.getMonth() - start.getMonth());
+
   document.getElementById("monthsSince").textContent = Math.max(0, months);
   document.getElementById("daysSince").textContent = Math.max(0, days);
-
-  // last updated
-  document.getElementById("lastUpdated").textContent =
-    new Date(document.lastModified).toLocaleDateString("es-MX");
 
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
