@@ -1,4 +1,12 @@
+/* ===========================
+   assets/style.css (COMPLETO)
+   Tema claro por defecto + Dark mode con data-theme="dark"
+   + Botón discreto en el nav a la derecha
+   =========================== */
+
 :root{
+  color-scheme: light;
+
   /* Tec */
   --tec-blue: #0033A0;     /* Pantone 286C */
   --tec-teal: #0099c8;
@@ -20,6 +28,19 @@
   --shadow3: 0 8px 18px rgba(0,51,160,.12);
 }
 
+/* ===== Dark mode: redefine TUS variables (no creamos otras) ===== */
+:root[data-theme="dark"]{
+  color-scheme: dark;
+
+  --bg: #0f1115;
+  --surface: rgba(255,255,255,.06);
+  --surface2: rgba(255,255,255,.08);
+  --ink: #e8e8e8;
+  --muted: rgba(232,232,232,.75);
+  --muted2: rgba(232,232,232,.68);
+  --line: rgba(232,232,232,.16);
+}
+
 *{ box-sizing: border-box; }
 html{ scroll-behavior: smooth; }
 
@@ -34,6 +55,14 @@ body{
   background:
     radial-gradient(900px 320px at 18% -10%, rgba(0,51,160,.20), rgba(0,51,160,0) 60%),
     radial-gradient(900px 320px at 82% 110%, rgba(0,164,153,.16), rgba(0,164,153,0) 60%),
+    var(--bg);
+}
+
+/* Gradientes un poco más sobrios en dark */
+:root[data-theme="dark"] body{
+  background:
+    radial-gradient(900px 320px at 18% -10%, rgba(0,51,160,.16), rgba(0,51,160,0) 60%),
+    radial-gradient(900px 320px at 82% 110%, rgba(0,164,153,.10), rgba(0,164,153,0) 60%),
     var(--bg);
 }
 
@@ -54,6 +83,9 @@ header{
   background: rgba(244,247,255,.78);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--line);
+}
+:root[data-theme="dark"] header{
+  background: rgba(15,17,21,.72);
 }
 
 .topbar{
@@ -93,12 +125,18 @@ header{
 }
 .pill b{ color: var(--tec-blue); }
 
+:root[data-theme="dark"] .pill{
+  background: rgba(255,255,255,.06);
+  color: rgba(232,232,232,.80);
+}
+
 nav{
   display:flex;
   gap: 10px;
   flex-wrap: wrap;
   padding-top: 10px;
 }
+
 nav a{
   display:inline-block;
   padding: 9px 11px;
@@ -118,6 +156,40 @@ nav a.active{
   border-color: rgba(0,51,160,.18);
   font-weight: 900;
 }
+
+:root[data-theme="dark"] nav a{
+  color: rgba(232,232,232,.78);
+}
+:root[data-theme="dark"] nav a:hover{
+  background: rgba(255,255,255,.06);
+  border-color: var(--line);
+}
+:root[data-theme="dark"] nav a.active{
+  background: rgba(0,51,160,.22);
+  border-color: rgba(0,51,160,.35);
+}
+
+/* ---------- Theme toggle button in nav ---------- */
+nav .theme-toggle{ margin-left: auto; }
+
+.theme-toggle{
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.65);
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 7px 10px;
+  line-height: 1;
+  cursor: pointer;
+  opacity: .9;
+}
+.theme-toggle:hover{ opacity: 1; }
+.theme-toggle:focus{ outline: 2px solid var(--line); outline-offset: 2px; }
+
+:root[data-theme="dark"] .theme-toggle{
+  background: rgba(255,255,255,.06);
+}
+
+.theme-icon{ font-size: 14px; }
 
 /* ---------- Main ---------- */
 main{ padding: 10px 0 56px; }
@@ -212,6 +284,11 @@ h1{
 }
 .kicker-tag strong{ color: var(--tec-blue); font-weight: 900; }
 
+:root[data-theme="dark"] .kicker-tag{
+  background: rgba(255,255,255,.06);
+  color: rgba(232,232,232,.80);
+}
+
 .dynamic-line{
   font-size: 14px;
   color: var(--muted);
@@ -252,13 +329,13 @@ h1{
   color: var(--muted2);
   font-size: 13px;
 }
+
 /* --- Header logo --- */
 .logo-header{
-  width: 60px;   /* ajusta aquí el tamaño */
+  width: 60px;
   height: 60px;
   object-fit: contain;
 }
-
 
 /* ---------- Buttons (modern, zip-like) ---------- */
 .actions{
@@ -324,6 +401,10 @@ h1{
   font-size: 14px;
 }
 .btn-ghost:hover{ text-decoration: none; background: white; }
+
+:root[data-theme="dark"] .btn-ghost{
+  background: rgba(255,255,255,.06);
+}
 
 /* --- Home multi-buttons --- */
 .actions-multi{
@@ -395,6 +476,11 @@ h1{
 .card ul{ margin: 10px 0 0; padding-left: 18px; color: var(--muted); }
 .card li{ margin: 6px 0; }
 
+/* Dark override */
+:root[data-theme="dark"] .card{
+  background: rgba(255,255,255,.05);
+}
+
 /* ---------- Stats row (Home) ---------- */
 .stats{
   display:grid;
@@ -422,6 +508,9 @@ h1{
   color: var(--muted);
   margin-top: 4px;
 }
+:root[data-theme="dark"] .stat{
+  background: rgba(255,255,255,.05);
+}
 
 /* ---------- Tables ---------- */
 .table-wrap{
@@ -432,6 +521,10 @@ h1{
   background: rgba(255,255,255,.88);
   box-shadow: var(--shadow2);
 }
+:root[data-theme="dark"] .table-wrap{
+  background: rgba(255,255,255,.05);
+}
+
 table{
   width: 100%;
   border-collapse: collapse;
@@ -448,6 +541,10 @@ th{
   color: rgba(81,96,122,.95);
   font-weight: 1000;
   background: rgba(0,51,160,.06);
+}
+:root[data-theme="dark"] th{
+  color: rgba(232,232,232,.85);
+  background: rgba(0,51,160,.18);
 }
 tr:last-child td{ border-bottom:none; }
 
@@ -486,7 +583,6 @@ footer{
   font-weight: 1000;
 }
 
-
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce){
   .hero::before, .hero::after{ animation: none !important; }
@@ -510,74 +606,3 @@ footer{
   object-fit: contain;
   opacity: 0.95;
 }
-
-/* ===== Theme variables ===== */
-:root{
-  color-scheme: light;
-  --bg: #ffffff;
-  --text: #111111;
-  --muted: rgba(0,0,0,.75);
-  --border: rgba(0,0,0,.15);
-  --card: #ffffff;
-  --soft: rgba(255,255,255,.55);
-}
-
-:root[data-theme="dark"]{
-  color-scheme: dark;
-  --bg: #0f1115;
-  --text: #e8e8e8;
-  --muted: rgba(232,232,232,.75);
-  --border: rgba(232,232,232,.18);
-  --card: rgba(255,255,255,.04);
-  --soft: rgba(255,255,255,.08);
-}
-
-/* Aplica variables a lo básico (sin tocar tu CSS global) */
-body{ background: var(--bg); color: var(--text); }
-.muted{ opacity: 1; color: var(--muted); }
-
-/* Inputs de filtros en ambos modos (tú ahora los fuerzas a blanco) */
-.filters input[type="text"],
-.filters input[type="date"]{
-  border: 1px solid var(--border);
-  background: var(--card);
-  color: var(--text);
-}
-.filters .btn{
-  border: 1px solid var(--border);
-  background: var(--card);
-  color: var(--text);
-}
-
-/* Chev en ambos modos */
-.chev{
-  border: 1px solid rgba(7,18,41,.10);
-  background: var(--soft);
-}
-
-/* ===== Navbar: alinea el toggle a la derecha ===== */
-header nav{
-  display: flex;
-  align-items: center;
-  gap: 14px;         /* ajusta si quieres */
-  flex-wrap: wrap;   /* por si se rompe en móvil */
-}
-
-header nav .theme-toggle{
-  margin-left: auto; /* empuja a la derecha */
-}
-
-/* Botón discreto */
-.theme-toggle{
-  border: 1px solid var(--border);
-  background: transparent;
-  color: var(--text);
-  border-radius: 999px;
-  padding: 6px 10px;
-  line-height: 1;
-  cursor: pointer;
-  opacity: .85;
-}
-.theme-toggle:hover{ opacity: 1; }
-.theme-toggle:focus{ outline: 2px solid var(--border); outline-offset: 2px; }
-.theme-icon{ font-size: 14px; }
