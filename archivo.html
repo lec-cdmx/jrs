@@ -52,15 +52,6 @@
     .muted{ opacity:.75; }
     .hidden-row{ display:none; }
 
-    /* Dark override para inputs/botón de filtros */
-    :root[data-theme="dark"] .filters input[type="text"],
-    :root[data-theme="dark"] .filters input[type="date"],
-    :root[data-theme="dark"] .filters .btn{
-      background: rgba(255,255,255,.06);
-      color: var(--ink);
-      border-color: var(--line);
-    }
-
     /* Cards colapsables (sin tocar tu CSS global) */
     .collapse-toggle{
       width:100%;
@@ -87,9 +78,6 @@
       background: rgba(255,255,255,.55);
       transition: transform .18s ease, filter .18s ease;
       flex: 0 0 auto;
-    }
-    :root[data-theme="dark"] .chev{
-      background: rgba(255,255,255,.08);
     }
     .chev svg{ display:block; }
     .collapse-toggle:hover .chev{ filter: brightness(.98); }
@@ -143,10 +131,6 @@
       <a href="preparatoria.html">JRS x PrepaTec</a>
       <a href="normas.html">Normas</a>
       <a href="contacto.html">Contacto</a>
-
-      <button id="themeToggle" class="theme-toggle" type="button" aria-label="Cambiar tema" title="Cambiar tema">
-        <span class="theme-icon" aria-hidden="true">☾</span>
-      </button>
     </nav>
   </div>
 </header>
@@ -622,34 +606,6 @@
     clearBtn.addEventListener("click", clearAll);
 
     applyFilters();
-  })();
-
-  // --- Theme toggle (light/dark) + persistencia ---
-  (function () {
-    const root = document.documentElement;
-    const btn = document.getElementById("themeToggle");
-    if (!btn) return;
-
-    const saved = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const initial = saved || (prefersDark ? "dark" : "light");
-
-    function setTheme(t){
-      if (t === "dark") root.setAttribute("data-theme", "dark");
-      else root.removeAttribute("data-theme");
-
-      localStorage.setItem("theme", t);
-
-      const icon = btn.querySelector(".theme-icon");
-      if (icon) icon.textContent = (t === "dark") ? "☀" : "☾";
-    }
-
-    setTheme(initial);
-
-    btn.addEventListener("click", () => {
-      const current = root.getAttribute("data-theme") === "dark" ? "dark" : "light";
-      setTheme(current === "dark" ? "light" : "dark");
-    });
   })();
 </script>
 </body>
