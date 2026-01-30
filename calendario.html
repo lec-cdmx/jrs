@@ -19,6 +19,12 @@
     table td:nth-child(6) {
       width: 110px;
     }
+    
+    /* Forzar que el enlace de Teams funcione */
+    .teams-link {
+      pointer-events: auto !important;
+      cursor: pointer !important;
+    }
   </style>
 </head>
 <body>
@@ -74,6 +80,7 @@
         href="https://teams.microsoft.com/meet/28726193316254?p=YRlkV1yXbOLbW75jG3"
         target="_blank"
         rel="noopener"
+        class="teams-link"
         style="font-size:17px; font-weight:800; text-decoration:underline;"
       >
         Unirse a la reunión
