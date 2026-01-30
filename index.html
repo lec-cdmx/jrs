@@ -55,7 +55,6 @@
       box-shadow: 0 0 0 3px rgba(0,164,153,.14);
     }
 
-    /* Fila superior: texto + logo */
     .hero-top-grid{
       display:grid;
       grid-template-columns: 1.6fr .9fr;
@@ -66,7 +65,6 @@
       .hero-top-grid{ grid-template-columns: 1fr; }
     }
 
-    /* Dynamic line */
     .dynamic-line{
       display:inline-flex;
       align-items:baseline;
@@ -98,7 +96,6 @@
     }
     @keyframes blink { 50% { opacity: 0; } }
 
-    /* Logo card */
     .logo-card{
       border-radius: 24px;
       border: 1px solid rgba(7,18,41,.08);
@@ -116,10 +113,8 @@
       filter: drop-shadow(0 20px 44px rgba(0,0,0,.18));
     }
 
-    /* Fila inferior: full width */
     .hero-bottom{ margin-top: 22px; }
 
-    /* Botones a TODO el ancho (manteniendo tus clases/colores c1–c4) */
     .actions.actions-multi{
       display:grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -139,7 +134,6 @@
       .actions.actions-multi{ grid-template-columns: 1fr; }
     }
 
-    /* Stats (full width) */
     .stats-row{
       margin-top: 0;
       display:grid;
@@ -169,7 +163,6 @@
       opacity: .78;
     }
 
-    /* Sección head */
     .section-head{
       margin-top: 18px;
       display:flex;
@@ -196,7 +189,7 @@
         />
         <div class="brandtext">
           <p class="title">Junior Research Seminar</p>
-          <div class="sub">Licenciatura en Economía · Tecnológico de Monterrey · Campus Ciudad de México</div>
+          <div class="sub">Licenciatura en Economía · Tecnológico de Monterrey</div>
         </div>
       </div>
       <div class="tec-logo-wrap">
@@ -220,14 +213,12 @@
 </header>
 
 <main class="wrap">
-  <!-- HERO: moderno + mantiene tu redacción -->
   <section class="home-hero">
     <div class="hero-badge">
       <span class="dot" aria-hidden="true"></span>
-      <span><b>JRS</b> · iniciativa de la <b>Licenciatura en Economía (CCM)</b></span>
+      <span><b>JRS</b> · iniciativa de la <b>Licenciatura en Economía</b></span>
     </div>
 
-    <!-- FILA SUPERIOR -->
     <div class="hero-top-grid">
       <div>
         <div class="dynamic-line" aria-label="Línea dinámica">
@@ -236,13 +227,20 @@
           </span>
         </div>
 
-        <!-- Mantener exactamente la redacción y el hl-blue -->
         <h1>
           Un espacio para presentar investigación y discutir temas <span class="hl-blue">económicos y sociales</span>, con retroalimentación útil.
         </h1>
 
         <p class="lead">
-          El Junior Research Seminar es una iniciativa de la Licenciatura en Economía del Campus Ciudad de México. Su objetivo es crear un espacio donde investigadorxs senior y junior —incluyendo alumnxs activxs— presenten trabajos de investigación concluidos o en proceso, con la intención de que cada sesión funcione como un semillero de ideas, retroalimentación y discusión académica. El seminario inició en febrero de 2025.
+          El Junior Research Seminar es una iniciativa de la Licenciatura en Economía del Tecnológico de Monterrey.
+          A partir del semestre febrero–junio de 2026, el JRS se consolida como una <strong>iniciativa regional</strong>
+          que integra a los campus Ciudad de México, Santa Fe y Estado de México.
+          Su objetivo es crear un espacio donde investigadorxs senior y junior —incluyendo alumnxs activxs—
+          presenten trabajos de investigación concluidos o en proceso, y donde cada sesión funcione como un
+          semillero de ideas, retroalimentación y discusión académica.
+          Desde esta etapa regional, las sesiones presenciales del JRS <strong>rotan entre los distintos campus</strong>,
+          fortaleciendo el intercambio académico y la construcción de comunidad entre sedes.
+          El seminario inició en febrero de 2025.
         </p>
       </div>
 
@@ -255,7 +253,6 @@
       </aside>
     </div>
 
-    <!-- FILA INFERIOR (FULL WIDTH) -->
     <div class="hero-bottom">
       <div class="actions actions-multi">
         <a class="btn-solid c1" href="calendario.html">Calendario</a>
@@ -289,7 +286,6 @@
     </div>
   </section>
 
-  <!-- ===== LO DE ABAJO (SE QUEDA) ===== -->
   <div class="section-head">
     <h2>Cómo funciona</h2>
     <p class="small">Formato y tiempos en <a href="normas.html">Normas</a>.</p>
@@ -304,8 +300,8 @@
         <strong>unx alumnx activx</strong> de la Licenciatura en Economía o de otras áreas de las ciencias sociales.
       </p>
       <p>
-        Las sesiones están abiertas a alumnxs de todos los semestres, quienes asisten para escuchar,
-        participar en la discusión y ofrecer retroalimentación. Se busca fomentar un diálogo
+        Las sesiones están abiertas a alumnxs de todos los semestres y campus participantes, quienes asisten
+        para escuchar, participar en la discusión y ofrecer retroalimentación. Se busca fomentar un diálogo
         interactivo, abierto y productivo, con énfasis en mejorar los trabajos presentados.
       </p>
       <p class="small">
@@ -332,7 +328,6 @@
 </footer>
 
 <script>
-  // Rotating word
   const words = ["ideas", "feedback", "discusión", "papers", "métodos", "preguntas"];
   let wi = 0;
   const rotating = document.getElementById("rotatingWord");
@@ -341,7 +336,6 @@
     rotating.textContent = words[wi];
   }, 900);
 
-  // Counters since Feb 2025 (only days shown in stats)
   const start = new Date("2025-02-01T00:00:00");
   const now = new Date();
   const ms = now - start;
