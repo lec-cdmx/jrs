@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="assets/style.css" />
   
   <style>
+    /* Ajuste de anchos de columnas */
     table th:nth-child(1), 
     table td:nth-child(1) {
       width: 105px;
@@ -53,188 +54,349 @@
 </header>
 
 <main class="wrap">
+  <!-- HERO -->
+  <section class="hero" style="padding:18px 18px;">
+    <h1 style="margin-top:0;">Calendario</h1>
+    <p class="lead">
+      El calendario de sesiones del semestre <b>Febrero–Junio 2026</b> se irá
+      liberando a la brevedad. Para ediciones anteriores, consulta el
+      <a href="archivo.html">Archivo histórico</a>.
+    </p>
+  </section>
 
-<section class="hero" style="padding:18px 18px;">
-  <h1 style="margin-top:0;">Calendario</h1>
-  <p class="lead">
-    El calendario de sesiones del semestre <b>Febrero–Junio 2026</b> se irá
-    liberando a la brevedad. Para ediciones anteriores, consulta el
-    <a href="archivo.html">Archivo histórico</a>.
-  </p>
-</section>
+  <!-- LIGA TEAMS -->
+  <section class="card" style="margin-top:14px; text-align:center;">
+    <p style="margin:0; font-size:18px; font-weight:700;">
+      Sesiones vía Microsoft Teams
+    </p>
+    <p style="margin:8px 0 0;">
+      <a href="https://teams.microsoft.com/meet/28726193316254?p=YRlkV1yXbOLbW75jG3" target="_blank" rel="noopener" style="font-size:17px; font-weight:800; text-decoration:underline;">Unirse a la reunión</a>
+    </p>
+  </section>
 
-<section class="card" style="margin-top:14px; text-align:center;">
-  <p style="margin:0; font-size:18px; font-weight:700;">
-    Sesiones vía Microsoft Teams
-  </p>
-  <p style="margin:8px 0 0;">
-    <a href="https://teams.microsoft.com/meet/28726193316254?p=YRlkV1yXbOLbW75jG3"
-       target="_blank" rel="noopener"
-       style="font-size:17px; font-weight:800; text-decoration:underline;">
-       Unirse a la reunión
-    </a>
-  </p>
-</section>
+  <!-- TABLA DE CALENDARIO -->
+  <div class="table-wrap" style="margin-top:14px;">
+    <table>
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Hora</th>
+          <th>Campus sede</th>
+          <th>Tema / Paper</th>
+          <th>Ponentes</th>
+          <th>Salón</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>11-feb-2026</td>
+          <td>13:15</td>
+          <td>CCM</td>
+          <td>
+            <b>Senior:</b> Movilidad Social y Salud
+          </td>
+          <td style="text-align:left;">
+            <b>Arranque del Junior Research Seminar</b><br><br>
+            <b>Senior:</b><br>
+            Mtro. Rodolfo de la Torre, Director de Movilidad Social del Centro de Estudios Espinosa Yglesias (CEEY).
+          </td>
+          <td>AI-222</td>
+        </tr>
 
-<div class="table-wrap" style="margin-top:14px;">
-<table>
-<thead>
-<tr>
-<th>Fecha</th>
-<th>Hora</th>
-<th>Campus sede</th>
-<th>Tema / Paper</th>
-<th>Ponentes</th>
-<th>Salón</th>
-</tr>
-</thead>
-<tbody>
+        <tr>
+          <td>18-feb-2026</td>
+          <td>13:15</td>
+          <td>CEM</td>
+          <td>
+            <b>Junior:</b> La economía creativa en México<br>
+            <br>
+            <b>Senior:</b> Análisis de la elección de Ministros de la Suprema Corte de Justicia de la Nación de México a través de un índice electoral
+          </td>
+          <td>
+            <b>Junior:</b><br>
+            Leonardo Daniel González Enriquez, LEC<br>
+            Athenea Alejandra Aguirre Gómez, LEC-LRI<br>
+            Bruno Chen, LEC
+            <br><br>
+            <b>Senior:</b><br>
+            Dr. Rafael Martínez González, Facultad de Ciencias Políticas y Sociales de la UNAM.
+          </td>
+          <td>Sala de Técnicas y Debates, 5to. piso CEDETEC, Cuerpo 1</td>
+        </tr>
 
-<tr>
-<td>11-feb-2026</td>
-<td>13:15</td>
-<td>CCM</td>
-<td><b>Senior:</b> Movilidad Social y Salud</td>
-<td>
-<b>Arranque del Junior Research Seminar</b><br><br>
-<b>Senior:</b><br>
-Mtro. Rodolfo de la Torre, CEEY
-</td>
-<td>AI-222</td>
-</tr>
+        <tr>
+          <td>25-feb-2026</td>
+          <td>11:30</td>
+          <td>CSF</td>
+          <td>
+            <b>Junior:</b> POR CONFIRMAR<br>
+            <br>
+            <b>Senior:</b> POR CONFIRMAR
+          </td>
+          <td>
+            <b>Junior:</b><br>
+            <br>
+            <b>Senior:</b><br>
+            Lic. Karla Fernanda Macías Torres, The Carbon Trust
+          </td>
+          <td>POR CONFIRMAR</td>
+        </tr>
 
-<tr>
-<td>18-feb-2026</td>
-<td>13:15</td>
-<td>CEM</td>
-<td>
-<b>Junior:</b> La economía creativa en México<br><br>
-<b>Senior:</b> Análisis de la elección de Ministros de la Suprema Corte...
-</td>
-<td>
-<b>Junior:</b><br>
-Leonardo Daniel González Enriquez, LEC<br>
-Athenea Alejandra Aguirre Gómez, LEC-LRI<br>
-Bruno Chen, LEC<br><br>
-<b>Senior:</b><br>
-Dr. Rafael Martínez González, UNAM
-</td>
-<td>Sala de Técnicas y Debates, 5to piso CEDETEC</td>
-</tr>
+        <tr>
+          <td>04-mar-2026</td>
+          <td>13:15</td>
+          <td>Multicampus</td>
+          <td>
+            <b>CCM</b><br>
+            <b>Junior:</b> POR CONFIRMAR<br>
+            <b>Senior:</b> POR CONFIRMAR
+            <br><br>
 
-<tr>
-<td>25-feb-2026</td>
-<td>11:30</td>
-<td>CSF</td>
-<td>
-<b>Junior:</b> POR CONFIRMAR<br><br>
-<b>Senior:</b> POR CONFIRMAR
-</td>
-<td>
-<b>Junior:</b><br><br>
-<b>Senior:</b><br>
-Lic. Karla Fernanda Macías Torres, The Carbon Trust
-</td>
-<td>POR CONFIRMAR</td>
-</tr>
+            <b>CSF (11:30)</b><br>
+            <b>Junior:</b> POR CONFIRMAR<br>
+            <b>Senior:</b> POR CONFIRMAR
+            <br><br>
 
-<tr>
-<td>04-mar-2026</td>
-<td>13:15</td>
-<td>Multicampus</td>
-<td>
-<b>CCM</b><br>
-<b>Junior:</b> POR CONFIRMAR<br>
-<b>Senior:</b> POR CONFIRMAR<br><br>
+            <b>CEM</b><br>
+            <b>Junior:</b> POR CONFIRMAR<br>
+            <b>Senior:</b> POR CONFIRMAR
+          </td>
+          <td>
+            <b>CCM</b><br>
+            <b>Junior:</b><br>
+            Mijael André Hidalgo Ugalde, LEC<br>
+            <b>Senior:</b><br>
+            <br><br>
 
-<b>CSF (11:30)</b><br>
-<b>Junior:</b> POR CONFIRMAR<br>
-<b>Senior:</b> POR CONFIRMAR<br><br>
+            <b>CSF</b><br>
+            <b>Junior:</b><br>
+            <br>
+            <b>Senior:</b><br>
+            <br><br>
 
-<b>CEM</b><br>
-<b>Junior:</b> POR CONFIRMAR<br>
-<b>Senior:</b> POR CONFIRMAR
-</td>
-<td>
-<b>CCM</b><br>
-<b>Junior:</b> Mijael André Hidalgo Ugalde, LEC<br>
-<b>Senior:</b><br><br>
+            <b>CEM</b><br>
+            <b>Junior:</b><br>
+            <br>
+            <b>Senior:</b><br>
+          </td>
+          <td>AI-303</td>
+        </tr>
 
-<b>CSF</b><br>
-<b>Junior:</b><br>
-<b>Senior:</b><br><br>
+        <tr>
+          <td>25-mar-2026</td>
+          <td>13:15</td>
+          <td>CCM</td>
+          <td>
+            <b>Junior:</b> POR CONFIRMAR<br>
+            <br>
+            <b>Senior:</b> POR CONFIRMAR
+          </td>
+          <td>
+            <b>Junior:</b><br>
+            Marianne Loyo Del Castillo, LEC<br>
+            <br>
+            <b>Senior:</b><br>
+            Dra. Fernanda Sobrino Macías, Escuela de Gobierno y Transformación Pública del Tec de Monterrey
+          </td>
+          <td>AI-303</td>
+        </tr>
 
-<b>CEM</b><br>
-<b>Junior:</b><br>
-<b>Senior:</b>
-</td>
-<td>AI-303</td>
-</tr>
+        <tr>
+          <td>08-abr-2026</td>
+          <td>13:15</td>
+          <td>CEM</td>
+          <td>
+            <b>Junior:</b> POR CONFIRMAR<br>
+            <br>
+            <b>Senior:</b> Do internacional remittances affect the multidimensional energy poverty in Indigenous Mexican households?
+          </td>
+          <td>
+            <b>Junior:</b><br>
+            <br>
+            <b>Senior:</b><br>
+            Dr. Genaro Cruz Salas, University of Oxford.
+          </td>
+          <td>Sala de Técnicas y Debates, 5to. piso CEDETEC, Cuerpo 1</td>
+        </tr>
 
-<tr>
-<td>25-mar-2026</td>
-<td>13:15</td>
-<td>CCM</td>
-<td>
-<b>Junior:</b> POR CONFIRMAR<br><br>
-<b>Senior:</b> POR CONFIRMAR
-</td>
-<td>
-<b>Junior:</b><br>
-Marianne Loyo Del Castillo, LEC<br><br>
-<b>Senior:</b><br>
-Dra. Fernanda Sobrino Macías, Tec
-</td>
-<td>AI-303</td>
-</tr>
+        <tr>
+          <td>15-abr-2026</td>
+          <td>11:30</td>
+          <td>CSF</td>
+          <td>
+            <b>Junior:</b> POR CONFIRMAR<br>
+            <br>
+            <b>Senior:</b> POR CONFIRMAR
+          </td>
+          <td>
+            <b>Junior:</b><br>
+            <br>
+            <b>Senior:</b><br>
+            Mtra. María Fernanda Rivera Flores, Network Building and Advocacy Lead en Global Network for Popular Transportation
+          </td>
+          <td>POR CONFIRMAR</td>
+        </tr>
 
-<tr>
-<td>15-abr-2026</td>
-<td>11:30</td>
-<td>CSF</td>
-<td>
-<b>Junior:</b> POR CONFIRMAR<br><br>
-<b>Senior:</b> POR CONFIRMAR
-</td>
-<td>
-<b>Junior:</b><br><br>
-<b>Senior:</b><br>
-Mtra. María Fernanda Rivera Flores, Global Network for Popular Transportation
-</td>
-<td>POR CONFIRMAR</td>
-</tr>
+        <tr>
+          <td>22-abr-2026</td>
+          <td>13:15</td>
+          <td>Multicampus</td>
+          <td>
+            <b>CCM</b><br>
+            <b>Junior:</b> POR CONFIRMAR<br>
+            <b>Senior:</b> POR CONFIRMAR
+            <br><br>
 
-<tr>
-<td>27-may-2026</td>
-<td>11:30</td>
-<td>CSF</td>
-<td>
-<b>Junior:</b> POR CONFIRMAR<br><br>
-<b>Senior:</b> POR CONFIRMAR
-</td>
-<td>
-<b>Junior:</b><br><br>
-<b>Senior:</b><br>
-Mtro. Aarón Bermejo Quintero, Banco de México
-</td>
-<td>POR CONFIRMAR</td>
-</tr>
+            <b>CSF (11:30)</b><br>
+            <b>Junior:</b> POR CONFIRMAR<br>
+            <b>Senior:</b> POR CONFIRMAR
+            <br><br>
 
-</tbody>
-</table>
-</div>
+            <b>CEM</b><br>
+            <b>Junior:</b> POR CONFIRMAR<br>
+            <b>Senior:</b> POR CONFIRMAR
+          </td>
+          <td>
+            <b>CCM</b><br>
+            <b>Junior:</b><br>
+            <br>
+            <b>Senior:</b><br>
+            Mtro. Elam Rodríguez Alcaraz, Economista en Banco de México.
+            <br><br>
 
+            <b>CSF</b><br>
+            <b>Junior:</b><br>
+            <br>
+            <b>Senior:</b><br>
+            <br><br>
+
+            <b>CEM</b><br>
+            <b>Junior:</b><br>
+            <br>
+            <b>Senior:</b><br>
+          </td>
+          <td>AI-303</td>
+        </tr>
+
+        <tr>
+          <td>13-may-2026</td>
+          <td>13:15</td>
+          <td>CCM</td>
+          <td>
+            <b>Junior:</b> POR CONFIRMAR<br>
+            <br>
+            <b>Senior:</b> POR CONFIRMAR
+          </td>
+          <td>
+            <b>Junior:</b><br>
+            <br>
+            <b>Senior:</b><br>
+            Dr. Carlos Enrique García Tejeda, División de Estudios Jurídicos del CIDE.
+          </td>
+          <td>AI-309</td>
+        </tr>
+
+        <tr>
+          <td>20-may-2026</td>
+          <td>13:15</td>
+          <td>CEM</td>
+          <td>
+            <b>Junior:</b> POR CONFIRMAR<br>
+            <br>
+            <b>Senior:</b> POR CONFIRMAR
+          </td>
+          <td>
+            <b>Junior:</b><br>
+            <br>
+            <b>Senior:</b><br>
+            Dr. José Antonio Nuñez Mora, Profesor Investigador en EGADE Business School.
+          </td>
+          <td>Sala de Técnicas y Debates, 5to. piso CEDETEC, Cuerpo 1</td>
+        </tr>
+
+        <tr>
+          <td>27-may-2026</td>
+          <td>11:30</td>
+          <td>CSF</td>
+          <td>
+            <b>Junior:</b> POR CONFIRMAR<br>
+            <br>
+            <b>Senior:</b> POR CONFIRMAR
+          </td>
+          <td>
+            <b>Junior:</b><br>
+            <br>
+            <b>Senior:</b><br>
+            Mtro. Aarón Bermejo Quintero, Economista y Analista de Datos en Banco de México
+          </td>
+          <td>POR CONFIRMAR</td>
+        </tr>
+
+        <tr>
+          <td>03-jun-2026</td>
+          <td>13:15</td>
+          <td>Multicampus</td>
+          <td>
+            <b>CCM</b><br>
+            <b>Junior:</b> POR CONFIRMAR<br>
+            <b>Senior:</b> POR CONFIRMAR
+            <br><br>
+
+            <b>CSF (11:30)</b><br>
+            <b>Junior:</b> POR CONFIRMAR<br>
+            <b>Senior:</b> POR CONFIRMAR
+            <br><br>
+
+            <b>CEM</b><br>
+            <b>Junior:</b> POR CONFIRMAR<br>
+            <b>Senior:</b> POR CONFIRMAR
+          </td>
+          <td>
+            <b>CCM</b><br>
+            <b>Junior:</b><br>
+            César Andrés Silva Farrera, LRI-LTP<br>
+            <b>Senior:</b><br>
+            Mtro. Hermilo Cortés González, Escuela de Gobierno y Transformación Pública del Tec de Monterrey.
+            <br><br>
+
+            <b>CSF</b><br>
+            <b>Junior:</b><br>
+            <br>
+            <b>Senior:</b><br>
+            <br><br>
+
+            <b>CEM</b><br>
+            <b>Junior:</b><br>
+            <br>
+            <b>Senior:</b><br>
+          </td>
+          <td>AI-309</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- CARD INFORMATIVA -->
+  <div class="grid">
+    <section class="card" style="grid-column: 1 / -1;">
+      <h2>Proponer una sesión</h2>
+      <p>
+        Revisa <a href="normas.html">Normas</a> y usa la plantilla mínima de
+        <a href="contacto.html">Contacto</a>.
+      </p>
+    </section>
+  </div>
 </main>
 
 <footer>
-<div class="footer-inner">
-© <span id="year"></span> JRS
-</div>
+  <div class="wave" aria-hidden="true"></div>
+  <div class="footer-inner">
+    <div>© <span id="year"></span> JRS</div>
+  </div>
 </footer>
 
 <script>
-document.getElementById("year").textContent = new Date().getFullYear();
+  document.getElementById("year").textContent = new Date().getFullYear();
 </script>
-
 </body>
 </html>
