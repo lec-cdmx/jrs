@@ -23,6 +23,30 @@
       border: 1.5px solid rgba(0,51,160,.16);
       box-shadow: 0 8px 28px rgba(7,18,41,.08);
     }
+    /* Scroll en móvil si el contenido es muy largo */
+    @media (max-width: 700px){
+      .current-session-card{
+        max-height: 85vh;
+        overflow-y: auto;
+        /* Mejora visual del scroll */
+        scrollbar-width: thin;
+        scrollbar-color: rgba(0,51,160,.3) rgba(0,51,160,.08);
+      }
+      .current-session-card::-webkit-scrollbar{
+        width: 6px;
+      }
+      .current-session-card::-webkit-scrollbar-track{
+        background: rgba(0,51,160,.08);
+        border-radius: 10px;
+      }
+      .current-session-card::-webkit-scrollbar-thumb{
+        background: rgba(0,51,160,.3);
+        border-radius: 10px;
+      }
+      .current-session-card::-webkit-scrollbar-thumb:hover{
+        background: rgba(0,51,160,.5);
+      }
+    }
     .current-session-card::before{
       content:"";
       position:absolute;
