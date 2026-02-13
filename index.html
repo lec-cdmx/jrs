@@ -23,30 +23,6 @@
       border: 1.5px solid rgba(0,51,160,.16);
       box-shadow: 0 8px 28px rgba(7,18,41,.08);
     }
-    /* Scroll en móvil si el contenido es muy largo */
-    @media (max-width: 700px){
-      .current-session-card{
-        max-height: 85vh;
-        overflow-y: auto;
-        /* Mejora visual del scroll */
-        scrollbar-width: thin;
-        scrollbar-color: rgba(0,51,160,.3) rgba(0,51,160,.08);
-      }
-      .current-session-card::-webkit-scrollbar{
-        width: 6px;
-      }
-      .current-session-card::-webkit-scrollbar-track{
-        background: rgba(0,51,160,.08);
-        border-radius: 10px;
-      }
-      .current-session-card::-webkit-scrollbar-thumb{
-        background: rgba(0,51,160,.3);
-        border-radius: 10px;
-      }
-      .current-session-card::-webkit-scrollbar-thumb:hover{
-        background: rgba(0,51,160,.5);
-      }
-    }
     .current-session-card::before{
       content:"";
       position:absolute;
@@ -106,8 +82,31 @@
     }
 
     /* ===== NUEVO: TABLA PARA ALINEAR INFO ===== */
+    .session-table-wrapper{
+      width: 100%;
+      overflow-x: auto;
+      /* Scroll horizontal en móvil */
+      scrollbar-width: thin;
+      scrollbar-color: rgba(0,51,160,.3) rgba(0,51,160,.08);
+    }
+    .session-table-wrapper::-webkit-scrollbar{
+      height: 6px;
+    }
+    .session-table-wrapper::-webkit-scrollbar-track{
+      background: rgba(0,51,160,.08);
+      border-radius: 10px;
+    }
+    .session-table-wrapper::-webkit-scrollbar-thumb{
+      background: rgba(0,51,160,.3);
+      border-radius: 10px;
+    }
+    .session-table-wrapper::-webkit-scrollbar-thumb:hover{
+      background: rgba(0,51,160,.5);
+    }
+    
     .session-table{
       width: 100%;
+      min-width: 500px; /* Fuerza scroll horizontal en móvil */
       border-collapse: separate;
       border-spacing: 0 6px; /* espacio vertical entre filas */
       font-size: 14px;
@@ -441,43 +440,45 @@
       <div class="session-info">
         <h3>Próxima sesión del JRS (CEM).</h3>
 
-        <!-- ===== CAMBIO: session-details -> tabla ===== -->
-        <table class="session-table" role="table" aria-label="Detalles de la próxima sesión">
-          <tbody>
-            <tr>
-              <th scope="row">Fecha:</th>
-              <td>Miércoles, 18 de febrero de 2026</td>
-            </tr>
-            <tr>
-              <th scope="row">Hora:</th>
-              <td>13:15 hrs</td>
-            </tr>
-            <tr>
-              <th scope="row">Ponencia junior:</th>
-              <td><b>La economía creativa en México</b></td>
-            </tr>
-            <tr>
-              <th scope="row">Presentadorxs junior:</th>
-              <td>Leonardo Daniel González Enriquez (LEC); Athenea Alexandra Aguirre Gómez (LEC-LRI); Bruno Chen (LEC)</td>
-            </tr>
-            <tr>
-              <th scope="row">Ponencia senior:</th>
-              <td><b>Análisis de la elección de Ministros de la Suprema Corte de Justicia de la Nación de México a través de un índice electoral</b></td>
-            </tr>
-            <tr>
-              <th scope="row">Presentador senior:</th>
-              <td>Dr. Rafael Martínez González, Facultad de Ciencias Políticas y Sociales de la UNAM</td>
-            </tr>
-            <tr>
-              <th scope="row">Campus:</th>
-              <td>CEM</td>
-            </tr>
-            <tr>
-              <th scope="row">Salón:</th>
-              <td>Sala de Técnicas y Debates, 5to. piso CEDETEC, Cuerpo 1</td>
-            </tr>
-          </tbody>
-        </table>
+        <!-- ===== CAMBIO: session-details -> tabla con scroll horizontal ===== -->
+        <div class="session-table-wrapper">
+          <table class="session-table" role="table" aria-label="Detalles de la próxima sesión">
+            <tbody>
+              <tr>
+                <th scope="row">Fecha:</th>
+                <td>Miércoles, 18 de febrero de 2026</td>
+              </tr>
+              <tr>
+                <th scope="row">Hora:</th>
+                <td>13:15 hrs</td>
+              </tr>
+              <tr>
+                <th scope="row">Ponencia junior:</th>
+                <td><b>La economía creativa en México</b></td>
+              </tr>
+              <tr>
+                <th scope="row">Presentadorxs junior:</th>
+                <td>Leonardo Daniel González Enriquez (LEC); Athenea Alexandra Aguirre Gómez (LEC-LRI); Bruno Chen (LEC)</td>
+              </tr>
+              <tr>
+                <th scope="row">Ponencia senior:</th>
+                <td><b>Análisis de la elección de Ministros de la Suprema Corte de Justicia de la Nación de México a través de un índice electoral</b></td>
+              </tr>
+              <tr>
+                <th scope="row">Presentador senior:</th>
+                <td>Dr. Rafael Martínez González, Facultad de Ciencias Políticas y Sociales de la UNAM</td>
+              </tr>
+              <tr>
+                <th scope="row">Campus:</th>
+                <td>CEM</td>
+              </tr>
+              <tr>
+                <th scope="row">Salón:</th>
+                <td>Sala de Técnicas y Debates, 5to. piso CEDETEC, Cuerpo 1</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
 
       <div class="session-cta">
