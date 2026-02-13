@@ -82,31 +82,8 @@
     }
 
     /* ===== NUEVO: TABLA PARA ALINEAR INFO ===== */
-    .session-table-wrapper{
-      width: 100%;
-      overflow-x: auto;
-      /* Scroll horizontal en móvil */
-      scrollbar-width: thin;
-      scrollbar-color: rgba(0,51,160,.3) rgba(0,51,160,.08);
-    }
-    .session-table-wrapper::-webkit-scrollbar{
-      height: 6px;
-    }
-    .session-table-wrapper::-webkit-scrollbar-track{
-      background: rgba(0,51,160,.08);
-      border-radius: 10px;
-    }
-    .session-table-wrapper::-webkit-scrollbar-thumb{
-      background: rgba(0,51,160,.3);
-      border-radius: 10px;
-    }
-    .session-table-wrapper::-webkit-scrollbar-thumb:hover{
-      background: rgba(0,51,160,.5);
-    }
-    
     .session-table{
       width: 100%;
-      min-width: 500px; /* Fuerza scroll horizontal en móvil */
       border-collapse: separate;
       border-spacing: 0 6px; /* espacio vertical entre filas */
       font-size: 14px;
@@ -117,6 +94,8 @@
       padding: 0;
       text-align: left;
       vertical-align: top; /* clave para que todo quede alineado arriba */
+      word-wrap: break-word;
+      overflow-wrap: break-word;
     }
     .session-table th{
       width: 170px; /* ajusta si quieres más/menos columna de labels */
@@ -127,6 +106,7 @@
     }
     .session-table td{
       color: #071229;
+      line-height: 1.5;
     }
     .session-table td b{ font-weight: 800; }
 
@@ -137,13 +117,17 @@
       }
       .session-table{
         font-size: 13px;
-        border-spacing: 0 5px;
+        border-spacing: 0 8px; /* más espacio entre filas en móvil */
       }
       .session-table th{
-        width: 95px;
-        white-space: normal;
+        width: 105px; /* más estrecho en tablet */
+        white-space: normal; /* permite wrap en labels */
         font-size: 12px;
         padding-right: 8px;
+        line-height: 1.3;
+      }
+      .session-table td{
+        line-height: 1.5;
       }
       .session-info h3{
         font-size: 18px;
@@ -157,15 +141,15 @@
       }
       .session-table{
         font-size: 12.5px;
-        border-spacing: 0 4px;
+        border-spacing: 0 10px; /* aún más espacio en móvil pequeño */
       }
       .session-table th{
-        width: 80px;
+        width: 85px; /* más estrecho en móvil */
         font-size: 11.5px;
         line-height: 1.3;
       }
       .session-table td{
-        line-height: 1.4;
+        line-height: 1.5;
       }
       .session-info h3{
         font-size: 17px;
@@ -440,45 +424,43 @@
       <div class="session-info">
         <h3>Próxima sesión del JRS (CEM).</h3>
 
-        <!-- ===== CAMBIO: session-details -> tabla con scroll horizontal ===== -->
-        <div class="session-table-wrapper">
-          <table class="session-table" role="table" aria-label="Detalles de la próxima sesión">
-            <tbody>
-              <tr>
-                <th scope="row">Fecha:</th>
-                <td>Miércoles, 18 de febrero de 2026</td>
-              </tr>
-              <tr>
-                <th scope="row">Hora:</th>
-                <td>13:15 hrs</td>
-              </tr>
-              <tr>
-                <th scope="row">Ponencia junior:</th>
-                <td><b>La economía creativa en México</b></td>
-              </tr>
-              <tr>
-                <th scope="row">Presentadorxs junior:</th>
-                <td>Leonardo Daniel González Enriquez (LEC); Athenea Alexandra Aguirre Gómez (LEC-LRI); Bruno Chen (LEC)</td>
-              </tr>
-              <tr>
-                <th scope="row">Ponencia senior:</th>
-                <td><b>Análisis de la elección de Ministros de la Suprema Corte de Justicia de la Nación de México a través de un índice electoral</b></td>
-              </tr>
-              <tr>
-                <th scope="row">Presentador senior:</th>
-                <td>Dr. Rafael Martínez González, Facultad de Ciencias Políticas y Sociales de la UNAM</td>
-              </tr>
-              <tr>
-                <th scope="row">Campus:</th>
-                <td>CEM</td>
-              </tr>
-              <tr>
-                <th scope="row">Salón:</th>
-                <td>Sala de Técnicas y Debates, 5to. piso CEDETEC, Cuerpo 1</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <!-- ===== CAMBIO: session-details -> tabla ===== -->
+        <table class="session-table" role="table" aria-label="Detalles de la próxima sesión">
+          <tbody>
+            <tr>
+              <th scope="row">Fecha:</th>
+              <td>Miércoles, 18 de febrero de 2026</td>
+            </tr>
+            <tr>
+              <th scope="row">Hora:</th>
+              <td>13:15 hrs</td>
+            </tr>
+            <tr>
+              <th scope="row">Ponencia junior:</th>
+              <td><b>La economía creativa en México</b></td>
+            </tr>
+            <tr>
+              <th scope="row">Presentadorxs junior:</th>
+              <td>Leonardo Daniel González Enriquez (LEC); Athenea Alexandra Aguirre Gómez (LEC-LRI); Bruno Chen (LEC)</td>
+            </tr>
+            <tr>
+              <th scope="row">Ponencia senior:</th>
+              <td><b>Análisis de la elección de Ministros de la Suprema Corte de Justicia de la Nación de México a través de un índice electoral</b></td>
+            </tr>
+            <tr>
+              <th scope="row">Presentador senior:</th>
+              <td>Dr. Rafael Martínez González, Facultad de Ciencias Políticas y Sociales de la UNAM</td>
+            </tr>
+            <tr>
+              <th scope="row">Campus:</th>
+              <td>CEM</td>
+            </tr>
+            <tr>
+              <th scope="row">Salón:</th>
+              <td>Sala de Técnicas y Debates, 5to. piso CEDETEC, Cuerpo 1</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
       <div class="session-cta">
