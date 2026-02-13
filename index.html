@@ -117,17 +117,29 @@
       }
       .session-table{
         font-size: 13px;
-        border-spacing: 0 8px; /* más espacio entre filas en móvil */
+        border-spacing: 0;
+      }
+      /* Cambiar a formato vertical en móvil */
+      .session-table th,
+      .session-table td{
+        display: block;
+        width: 100%;
+        padding: 0;
       }
       .session-table th{
-        width: 105px; /* más estrecho en tablet */
-        white-space: normal; /* permite wrap en labels */
-        font-size: 12px;
-        padding-right: 8px;
+        font-size: 11px;
+        padding-right: 0;
+        margin-bottom: 4px;
         line-height: 1.3;
       }
       .session-table td{
+        font-size: 14px;
         line-height: 1.5;
+        margin-bottom: 16px;
+      }
+      .session-table tr{
+        display: block;
+        margin-bottom: 8px;
       }
       .session-info h3{
         font-size: 18px;
@@ -139,17 +151,13 @@
       .current-session-card{
         padding: 18px 16px;
       }
-      .session-table{
-        font-size: 12.5px;
-        border-spacing: 0 10px; /* aún más espacio en móvil pequeño */
-      }
       .session-table th{
-        width: 85px; /* más estrecho en móvil */
-        font-size: 11.5px;
-        line-height: 1.3;
+        font-size: 10.5px;
+        margin-bottom: 3px;
       }
       .session-table td{
-        line-height: 1.5;
+        font-size: 13px;
+        margin-bottom: 14px;
       }
       .session-info h3{
         font-size: 17px;
