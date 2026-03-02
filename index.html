@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="assets/style.css" />
 
   <style>
-    /* ===== CARD DE SESIÓN ACTUAL ===== */
     .current-session-card{
       margin-top: 14px;
       margin-bottom: 20px;
@@ -26,13 +25,10 @@
     .current-session-card::before{
       content:"";
       position:absolute;
-      top:0;
-      left:0;
-      right:0;
+      top:0; left:0; right:0;
       height:4px;
       background: linear-gradient(90deg, #0033A0, #00A499);
     }
-
     .session-header{
       display:flex;
       align-items:center;
@@ -53,8 +49,7 @@
       color: #0033A0;
     }
     .session-badge .pulse{
-      width: 6px;
-      height: 6px;
+      width: 6px; height: 6px;
       border-radius: 50%;
       background: #00A499;
       animation: pulse 2s ease-in-out infinite;
@@ -63,29 +58,23 @@
       0%, 100% { opacity: 1; transform: scale(1); }
       50% { opacity: 0.6; transform: scale(1.1); }
     }
-
     .session-content{
       display:grid;
       grid-template-columns: 1fr auto;
       gap: 20px;
       align-items:center;
     }
-    @media (max-width: 700px){
-      .session-content{ grid-template-columns: 1fr; }
-    }
-
+    @media (max-width: 700px){ .session-content{ grid-template-columns: 1fr; } }
     .session-info h3{
       margin: 0 0 8px 0;
       font-size: 20px;
       font-weight: 800;
       color: #071229;
     }
-
-    /* ===== NUEVO: TABLA PARA ALINEAR INFO ===== */
     .session-table{
       width: 100%;
       border-collapse: separate;
-      border-spacing: 0 6px; /* espacio vertical entre filas */
+      border-spacing: 0 6px;
       font-size: 14px;
       opacity: .88;
     }
@@ -93,91 +82,43 @@
     .session-table td{
       padding: 0;
       text-align: left;
-      vertical-align: top; /* clave para que todo quede alineado arriba */
+      vertical-align: top;
       word-wrap: break-word;
       overflow-wrap: break-word;
     }
     .session-table th{
-      width: 170px; /* ajusta si quieres más/menos columna de labels */
+      width: 170px;
       font-weight: 700;
       color: #0033A0;
       padding-right: 10px;
       white-space: nowrap;
     }
-    .session-table td{
-      color: #071229;
-      line-height: 1.5;
-    }
+    .session-table td{ color: #071229; line-height: 1.5; }
     .session-table td b{ font-weight: 800; }
-
-    /* Mejor visualización en tablets */
     @media (max-width: 700px){
-      .current-session-card{
-        padding: 20px 20px;
-      }
-      .session-table{
-        font-size: 13px;
-        border-spacing: 0;
-      }
-      /* Cambiar a formato vertical en móvil */
+      .current-session-card{ padding: 20px 20px; }
+      .session-table{ font-size: 13px; border-spacing: 0; }
       .session-table th,
-      .session-table td{
-        display: block;
-        width: 100%;
-        padding: 0;
-      }
-      .session-table th{
-        font-size: 11px;
-        padding-right: 0;
-        margin-bottom: 4px;
-        line-height: 1.3;
-      }
-      .session-table td{
-        font-size: 14px;
-        line-height: 1.5;
-        margin-bottom: 16px;
-      }
-      .session-table tr{
-        display: block;
-        margin-bottom: 8px;
-      }
-      .session-info h3{
-        font-size: 18px;
-      }
+      .session-table td{ display: block; width: 100%; padding: 0; }
+      .session-table th{ font-size: 11px; padding-right: 0; margin-bottom: 4px; line-height: 1.3; }
+      .session-table td{ font-size: 14px; line-height: 1.5; margin-bottom: 16px; }
+      .session-table tr{ display: block; margin-bottom: 8px; }
+      .session-info h3{ font-size: 18px; }
     }
-    
-    /* Optimización para móviles pequeños */
     @media (max-width: 520px){
-      .current-session-card{
-        padding: 18px 16px;
-      }
-      .session-table th{
-        font-size: 10.5px;
-        margin-bottom: 3px;
-      }
-      .session-table td{
-        font-size: 13px;
-        margin-bottom: 14px;
-      }
-      .session-info h3{
-        font-size: 17px;
-        margin-bottom: 10px;
-      }
-      .session-badge{
-        font-size: 12px;
-        padding: 5px 12px;
-      }
+      .current-session-card{ padding: 18px 16px; }
+      .session-table th{ font-size: 10.5px; margin-bottom: 3px; }
+      .session-table td{ font-size: 13px; margin-bottom: 14px; }
+      .session-info h3{ font-size: 17px; margin-bottom: 10px; }
+      .session-badge{ font-size: 12px; padding: 5px 12px; }
     }
-
     .session-cta{
       display:flex;
       flex-direction: column;
       gap: 8px;
       align-items: flex-end;
     }
-    @media (max-width: 700px){
-      .session-cta{ align-items: flex-start; }
-    }
+    @media (max-width: 700px){ .session-cta{ align-items: flex-start; } }
     .session-cta .btn-calendar{
       display:inline-flex;
       align-items:center;
@@ -197,16 +138,7 @@
       transform: translateY(-1px);
       box-shadow: 0 6px 20px rgba(0,51,160,.32);
     }
-    .session-location{
-      font-size: 12px;
-      opacity: .70;
-      text-align: right;
-    }
-    @media (max-width: 700px){
-      .session-location{ text-align: left; }
-    }
 
-    /* ===== HOME HERO ===== */
     .home-hero{
       margin-top: 14px;
       position: relative;
@@ -232,7 +164,6 @@
       opacity:.9;
     }
     .home-hero > *{ position: relative; z-index: 1; }
-
     .hero-badge{
       display:inline-flex;
       align-items:center;
@@ -251,19 +182,13 @@
       background: #00A499;
       box-shadow: 0 0 0 3px rgba(0,164,153,.14);
     }
-
-    /* Fila superior: texto + logo (MISMA ALTURA) */
     .hero-top-grid{
       display:grid;
       grid-template-columns: 1.6fr .9fr;
       gap: 20px;
       align-items: stretch;
     }
-    @media (max-width: 900px){
-      .hero-top-grid{ grid-template-columns: 1fr; }
-    }
-
-    /* Dynamic line */
+    @media (max-width: 900px){ .hero-top-grid{ grid-template-columns: 1fr; } }
     .dynamic-line{
       display:inline-flex;
       align-items:baseline;
@@ -284,18 +209,9 @@
       border: 1px solid rgba(0,51,160,.14);
       font-weight: 650;
     }
-    .dynamic-word{
-      color: #0033A0;
-      font-weight: 850;
-      letter-spacing: .01em;
-    }
-    .cursor{
-      opacity: .5;
-      animation: blink 1s step-end infinite;
-    }
+    .dynamic-word{ color: #0033A0; font-weight: 850; letter-spacing: .01em; }
+    .cursor{ opacity: .5; animation: blink 1s step-end infinite; }
     @keyframes blink { 50% { opacity: 0; } }
-
-    /* Logo card (MÁS ALTA + IMAGEN CENTRADA) */
     .logo-card{
       height: 100%;
       border-radius: 24px;
@@ -303,7 +219,6 @@
       background: rgba(255,255,255,.78);
       box-shadow: 0 22px 60px rgba(7,18,41,.12);
       padding: 36px;
-
       display:flex;
       align-items:center;
       justify-content:center;
@@ -314,11 +229,7 @@
       height: auto;
       filter: drop-shadow(0 20px 44px rgba(0,0,0,.18));
     }
-
-    /* Fila inferior: full width */
     .hero-bottom{ margin-top: 22px; }
-
-    /* Botones a TODO el ancho (manteniendo tus clases/colores c1–c4) */
     .actions.actions-multi{
       display:grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -326,49 +237,25 @@
       margin-top: 0;
       margin-bottom: 16px;
     }
-    .actions.actions-multi a{
-      width:100%;
-      justify-content:center;
-      text-align:center;
-    }
-    @media (max-width: 900px){
-      .actions.actions-multi{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-    @media (max-width: 520px){
-      .actions.actions-multi{ grid-template-columns: 1fr; }
-    }
-
-    /* Stats (full width) */
+    .actions.actions-multi a{ width:100%; justify-content:center; text-align:center; }
+    @media (max-width: 900px){ .actions.actions-multi{ grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 520px){ .actions.actions-multi{ grid-template-columns: 1fr; } }
     .stats-row{
       margin-top: 0;
       display:grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 10px;
     }
-    @media (max-width: 900px){
-      .stats-row{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-    @media (max-width: 520px){
-      .stats-row{ grid-template-columns: 1fr; }
-    }
+    @media (max-width: 900px){ .stats-row{ grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 520px){ .stats-row{ grid-template-columns: 1fr; } }
     .statbox{
       padding: 14px;
       border-radius: 16px;
       border: 1px solid rgba(7,18,41,.08);
       background: rgba(255,255,255,.76);
     }
-    .statbox .num{
-      font-size: 26px;
-      font-weight: 900;
-      letter-spacing: -0.01em;
-    }
-    .statbox .label{
-      margin-top: 4px;
-      font-size: 13px;
-      opacity: .78;
-    }
-
-    /* Sección head */
+    .statbox .num{ font-size: 26px; font-weight: 900; letter-spacing: -0.01em; }
+    .statbox .label{ margin-top: 4px; font-size: 13px; opacity: .78; }
     .section-head{
       margin-top: 18px;
       display:flex;
@@ -430,42 +317,45 @@
 
     <div class="session-content">
       <div class="session-info">
-        <h3>Próxima sesión del JRS (CSF).</h3>
+        <h3>Próxima sesión del JRS (CCM).</h3>
 
-        <!-- ===== CAMBIO: session-details -> tabla ===== -->
         <table class="session-table" role="table" aria-label="Detalles de la próxima sesión">
           <tbody>
             <tr>
               <th scope="row">Fecha:</th>
-              <td>Miércoles, 25 de febrero de 2026</td>
+              <td>Miércoles, 4 de marzo de 2026</td>
             </tr>
             <tr>
               <th scope="row">Hora:</th>
-              <td>11:30 hrs</td>
+              <td>13:15 hrs</td>
             </tr>
             <tr>
               <th scope="row">Ponencia junior:</th>
-              <td><b>¿Quién gana cuando el gobierno compra?</b></td>
+              <td><b>Gentrificación urbana: causas, efectos y cómo combatirla</b></td>
             </tr>
             <tr>
-              <th scope="row">Presentadorxs junior:</th>
-              <td>María Paula Vargas (LEC)</td>
+              <th scope="row">Presentador junior:</th>
+              <td>André Mijael Hidalgo (LEC)</td>
             </tr>
             <tr>
               <th scope="row">Ponencia senior:</th>
-              <td><b>Riesgos climáticos: impactos económicos y su afectación en la estabilidad financiera global.</b></td>
+              <td><b>Política Climática y Crecimiento Económico: Lecciones de Aplicaciones en Latinoamérica, Europa y África</b></td>
             </tr>
             <tr>
-              <th scope="row">Presentador senior:</th>
-              <td>Lic. Karla Fernanda Macías Torres, The Carbon Trust</td>
+              <th scope="row">Presentadorxs senior:</th>
+              <td>Dr. Edmundo Molina y Dra. Esperanza Plaza, Escuela de Gobierno y Transformación Pública</td>
             </tr>
             <tr>
               <th scope="row">Campus:</th>
-              <td>CSF</td>
+              <td>CCM</td>
             </tr>
             <tr>
               <th scope="row">Salón:</th>
-              <td>Salón 2304</td>
+              <td>A1-303</td>
+            </tr>
+            <tr>
+              <th scope="row">Transmisión Teams:</th>
+              <td>Id: <b>220 893 740 034 65</b> · Código: <b>LV9Su2U5</b></td>
             </tr>
           </tbody>
         </table>
@@ -536,15 +426,15 @@
           <div class="label">días construyendo comunidad</div>
         </div>
         <div class="statbox">
-          <div class="num">25</div>
+          <div class="num">26</div>
           <div class="label">sesiones del JRS</div>
         </div>
         <div class="statbox">
-          <div class="num">36</div>
+          <div class="num">37</div>
           <div class="label">presentadorxs junior (alumnxs activxs)</div>
         </div>
         <div class="statbox">
-          <div class="num">21</div>
+          <div class="num">22</div>
           <div class="label">presentadorxs senior</div>
         </div>
       </div>
@@ -598,7 +488,6 @@
 </footer>
 
 <script>
-  // Rotating word
   const words = ["ideas", "feedback", "discusión", "papers", "métodos", "preguntas"];
   let wi = 0;
   const rotating = document.getElementById("rotatingWord");
@@ -607,7 +496,6 @@
     rotating.textContent = words[wi];
   }, 900);
 
-  // Counters since Feb 2025 (only days shown in stats)
   const start = new Date("2025-02-01T00:00:00");
   const now = new Date();
   const ms = now - start;
