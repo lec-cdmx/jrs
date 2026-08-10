@@ -176,11 +176,21 @@
     /* ===== PRÓXIMA SESIÓN ===== */
     .proxima-sesion{
       margin-top: 12px;
+      position: relative;
       border-radius: 20px;
       overflow: hidden;
       border: 1px solid rgba(0,51,160,.18);
-      background: linear-gradient(135deg, rgba(0,51,160,.04) 0%, rgba(0,164,153,.05) 100%);
-      box-shadow: 0 8px 32px rgba(0,51,160,.08);
+      background:
+        radial-gradient(700px 240px at 95% 0%, rgba(0,164,153,.18), transparent 62%),
+        linear-gradient(135deg, #f7faff 0%, #f2fcfb 100%);
+      box-shadow: 0 16px 46px rgba(0,51,160,.13);
+    }
+    .proxima-sesion::before{
+      content:"";
+      position:absolute;
+      top:0; left:0; right:0;
+      height:4px;
+      background: linear-gradient(90deg, #0033A0, #00A499);
     }
     .ps-header{
       display: flex;
@@ -228,14 +238,14 @@
     .ps-body{
       padding: 16px 20px 20px;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: 14px;
     }
     @media(max-width: 680px){ .ps-body{ grid-template-columns: 1fr; } }
 
     .ps-slot{
       border-radius: 14px;
-      padding: 14px 16px;
+      padding: 18px;
       border: 1px solid rgba(7,18,41,.08);
       background: rgba(255,255,255,.82);
     }
@@ -256,25 +266,24 @@
     .pip.junior{ background: #00A499; }
 
     .ps-presenter{
-      font-size: 14.5px;
-      font-weight: 800;
+      font-size: clamp(20px, 3vw, 28px);
+      font-weight: 900;
       color: #071229;
       line-height: 1.35;
-      margin-bottom: 2px;
+      margin-bottom: 5px;
     }
     .ps-affil{
-      font-size: 12px;
-      opacity: .60;
-      margin-bottom: 9px;
+      font-size: 13px;
+      opacity: .68;
+      margin-bottom: 12px;
       font-weight: 600;
     }
     .ps-title{
-      font-size: 13px;
-      font-style: italic;
+      font-size: 14px;
       color: #071229;
       opacity: .80;
       line-height: 1.45;
-      padding-top: 9px;
+      padding-top: 12px;
       border-top: 1px solid rgba(7,18,41,.07);
     }
 
@@ -301,6 +310,21 @@
       flex-wrap: wrap;
     }
     .ps-teams-info b{ font-weight: 900; color: #0033A0; }
+    .ps-link{
+      margin-left:auto;
+      display:inline-flex;
+      align-items:center;
+      padding:8px 12px;
+      border-radius:999px;
+      color:#0033A0;
+      background:#fff;
+      border:1px solid rgba(0,51,160,.16);
+      font-size:12px;
+      font-weight:800;
+      text-decoration:none;
+    }
+    .ps-link:hover{ background:#0033A0; color:#fff; }
+    @media(max-width: 560px){ .ps-link{ margin-left:0; } }
   </style>
 </head>
 
@@ -340,14 +364,7 @@
 </header>
 
 <main class="wrap">
-  <!--
-  ==========================================================
-  PRÓXIMA SESIÓN TEMPORALMENTE OCULTA
-  Para reactivarla, elimina esta apertura de comentario y el cierre
-  situado después del bloque de próxima sesión.
-  ==========================================================
-
-  PRÓXIMA SESIÓN
+  <!-- PRÓXIMA SESIÓN -->
   <div class="section-head" style="margin-top:14px;">
     <h2>Próxima sesión</h2>
     <p class="small">Ver todas en <a href="calendario.html">Calendario</a>.</p>
@@ -360,9 +377,9 @@
         Próxima sesión
       </span>
       <div class="ps-meta">
-        <span>📅 Miércoles 27 de mayo, 2026</span>
-        <span>🕐 13:00 hrs</span>
-        <span>📍 Aula 5305</span>
+        <span>📅 Miércoles 26 de agosto de 2026</span>
+        <span>🕐 13:00 horas</span>
+        <span>📍 CCM · AI-315</span>
       </div>
     </div>
 
@@ -370,34 +387,22 @@
       <div class="ps-slot">
         <div class="ps-slot-label senior">
           <span class="pip senior"></span>
-          Presentación senior
+          Investigación invitada
         </div>
-        <div class="ps-presenter">Mtro. Aarón Bermejo</div>
-        <div class="ps-affil">LSE</div>
-        <div class="ps-title">Coerción criminal y tamaño de mercado: Efectos diferenciados del crimen organizado sobre el número de negocios a nivel municipal en México</div>
-      </div>
-
-      <div class="ps-slot">
-        <div class="ps-slot-label junior">
-          <span class="pip junior"></span>
-          Presentación junior
-        </div>
-        <div class="ps-presenter">Gabriela Buitrago · Valentina Albo · Joan Loya</div>
-        <div class="ps-affil">LEC · Tec de Monterrey</div>
-        <div class="ps-title">Panorama Macroeconómico Actual: Migraciones y Remesas (Reto Banxico)</div>
+        <div class="ps-presenter">Mtro. Erik Ortiz Covarrubias</div>
+        <div class="ps-affil">Estudiante del Doctorado en Economía · CEMFI</div>
+        <div class="ps-title"><b>Tema / paper:</b> por confirmar</div>
       </div>
     </div>
 
     <div class="ps-footer">
-      <span class="ps-teams-label">🖥 Vía Teams:</span>
+      <span class="ps-teams-label">Sesión presencial</span>
       <div class="ps-teams-info">
-        <span>Id. de reunión: <b>278 767 616 094 310</b></span>
-        <span>Código de acceso: <b>6Do65yd9</b></span>
+        <span>Campus Ciudad de México</span>
       </div>
+      <a class="ps-link" href="calendario.html">Consultar calendario →</a>
     </div>
   </div>
-
-  -->
 
   <section class="home-hero">
     <div class="hero-badge">
